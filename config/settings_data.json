@@ -2,6 +2,17 @@
  "current": "Default",
  "presets": {
   "Default": {
+   "ash_headline_font_family": "playfair_display_n7",
+   "ash_headline_color": "#56443e",
+   "ash_headline_font_size": 65,
+   "ash_headline_line_height": 67.14,
+
+   "ash_description_font_family": "poppins_n4",
+   "ash_description_font_size": 14,
+   "ash_description_line_height": 23.66,
+   "ash_description_color": "#000000",
+   "ash_description_letter_spacing": -0.2,
+
    "colors_solid_button_labels": "#ffffff",
    "colors_accent_1": "#121212",
    "gradient_accent_1": "",
@@ -10,10 +21,12 @@
    "colors_text": "#121212",
    "colors_outline_button_labels": "#121212",
    "colors_background_1": "#ffffff",
+
    "gradient_background_1": "",
    "colors_background_2": "#f3f3f3",
    "gradient_background_2": "",
    "type_header_font": "assistant_n4",
+
    "heading_scale": 100,
    "type_body_font": "assistant_n4",
    "body_scale": 100,

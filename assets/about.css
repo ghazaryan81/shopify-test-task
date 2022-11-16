@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500&display=block");
+.ash-container__fix {
+  max-width: 1296px;
+  margin: 0 auto;
+}
+
+.ash-section {
+  margin: 0 auto;
+}
+.ash-section--about {
+  max-width: 1076px;
+}
+
+.ash-headline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Playfair Display";
+  font-size: var(--ash_headline_font_size);
+  line-height: var(--ash_headline_line_height);
+  color: var(--ash_headline_color);
+}
+
+.ash-description {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+  font-size: var(--ash_description_font_size);
+  line-height: var(--ash_description_line_height);
+  color: rgba(var(--ash_description_color), 0.2);
+  letter-spacing: var(--ash_description_letter_spacing);
+}
+
+.ah-horizontal-divider {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  width: 100%;
+  border-bottom: solid rgba(0, 0, 0, 0.2) 1px;
+  font-size: 0;
+}
+
+.block-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+.block-list__item {
+  text-decoration: none;
+}/*# sourceMappingURL=about.css.map */
