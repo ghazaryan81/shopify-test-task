@@ -428,6 +428,19 @@
     }
    }
   },
+  "ash-about": {
+   "name": "About section",
+   "blocks": {
+    "headline": {
+     "name": "headline",
+     "settings": {
+      "text": {
+       "label": "Text"
+      }
+     }
+    }
+   }
+  },
   "apps": {
    "name": "Apps",
    "settings": {

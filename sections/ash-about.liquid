@@ -1,9 +1,15 @@
 <section class="ash-container">
   <div class="ash-container__fix">
     <div class="ash-section ash-section--about">
-      <h2 class="ash-headline">
-        {{ 'sections.about.title' | t }}
-      </h2>
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'headline' -%}
+            <h2 class="ash-headline">
+              {{ block.settings.text | escape }}
+            </h2>
+        {%- endcase -%}
+      {%- endfor -%}
+
       <p class="ash-description">
         {{ 'sections.about.caption' | t }}
       </p>
@@ -27,5 +33,21 @@
 </section>
 
 {% schema %}
-{}
+{
+  "name": "t:sections.ash-about.name",
+  "blocks": [
+    {
+      "type": "headline",
+      "name": "t:sections.announcement-bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Hi, we are Handmade Studio",
+          "label": "t:sections.ash-about.blocks.headline.settings.text.label"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
