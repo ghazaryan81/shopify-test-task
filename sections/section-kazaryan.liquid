@@ -4,6 +4,12 @@
 <section class="section-kazaryan">
   <div class="section-kazaryan__fix">
     <div class="about-container about-container--left-spacer">
+      <div class="about-container__img-cell">
+        <div class="about-container__img-position">
+          <img src="{{ section.settings.img }}" alt="" width="306" height="376" loading="lazy">
+        </div>
+      </div>
+
       <h2 class="section-headline">
         <p>
           <em>Hi</em>, we are <br>
@@ -43,7 +49,21 @@
           <div class="person-positions">The Founders of Handmade Studio</div>
         </div>
       </div>
-      {%- comment -%} list-persons {%- endcomment -%}
+      {%- comment -%} /list-persons {%- endcomment -%}
     </div>
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "t:sections.ash_about.name",
+  "settings": [
+    {
+      "id": "img",
+      "type": "text",
+      "label": "img",
+      "default": "https://hikekazarian.ru/portfolio/ashstone-studios-test-task/assets/img/img-1x.jpg"
+    }
+  ]
+}
+{% endschema %}

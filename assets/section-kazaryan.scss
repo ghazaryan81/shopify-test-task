@@ -1,18 +1,18 @@
+@use "sass:math";
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500&display=block");
+
+@function toRem($value) {
+ @return calc(math.div($value, calc(16 - (16 * 37.5 / 100)))) + rem;
+}
+
+:root {
+ --section-kazaryan__fix-max-width: #{toRem(1296)};
+}
 
 @mixin reset-default() {
  list-style: none;
  padding: 0;
  margin: 0;
-}
-
-@mixin typography-persons() {
- font-family: "Poppins", sans-serif;
- font-weight: 400;
- font-size: 14px;
- line-height: 23.66px;
- letter-spacing: -0.02px;
- color: #000;
 }
 
 .flex-box {
@@ -22,13 +22,11 @@
 // .section-kazaryan
 .section-kazaryan {
  display: block;
- // min-height: 1031px;
  background: #f6f4f2;
- border-top: solid 1px transparent;
 
  // .section-kazaryan__fix
  &__fix {
-  max-width: 1296px;
+  max-width: var(--section-kazaryan__fix-max-width);
   margin: 0 auto;
  }
 
@@ -40,16 +38,57 @@
 
 // .about-container
 .about-container {
+ $this: &;
  max-width: 1098px;
  margin: 0 auto;
  position: relative;
  top: 0;
  left: 0;
- padding-top: 263px;
+ padding-top: 264px;
  padding-bottom: 182px;
+
+ // .about-container__img-cell
+ &__img-cell {
+  text-decoration: none;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  font-size: 0;
+ }
+
+ // .about-container__img-position
+ &__img-position {
+  position: absolute;
+  top: 0;
+  font-size: 0;
+ }
+
  // .about-container--left-spacer
  &--left-spacer {
   padding-left: 432px;
+  #{$this}__img-position {
+   left: -100%;
+   transform: translate(50%, 0);
+   img {
+    margin-top: 12px;
+    margin-left: 52px;
+   }
+  }
+ }
+
+ // .about-container--right-spacer
+ &--right-spacer {
+  padding-right: 432px;
+
+  #{$this}__img-position {
+   left: 100%;
+   transform: translate(50%, 0);
+   img {
+    margin-top: 12px;
+    margin-left: -28px;
+   }
+  }
  }
 }
 
@@ -81,6 +120,7 @@
  letter-spacing: -0.02px;
  color: #000;
  opacity: 0.6;
+ word-spacing: -2.8px;
 
  // .section-context--caption
  &--caption {
@@ -88,14 +128,16 @@
   padding-top: 54px;
   padding-bottom: 52px;
   padding-left: 5px;
+  padding-right: 40px;
  }
 
  // .section-context--two-cols
  &--two-cols {
   column-count: 2;
-  column-gap: 1px;
+  column-gap: 21px;
   padding-top: 25px;
   padding-left: 5px;
+  padding-right: 20px;
  }
 }
 
@@ -125,8 +167,11 @@
 
  // .list-persons__full-names
  &__full-names {
-  @include typography-persons;
-
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 23.66px;
+  color: #000;
   letter-spacing: -0.31px;
  }
 }
@@ -151,5 +196,10 @@
 // .person-full-name
 .person-full-name {
  display: inline-block;
- padding-right: 10px;
+ padding-right: 8px;
+}
+
+// .person-positions
+.person-positions {
+ color: rgba(0, 0, 0, 0.6);
 }
