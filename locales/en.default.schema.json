@@ -445,6 +445,32 @@
     }
    }
   },
+
+  "section_kazaryan": {
+   "name": "About section",
+   "settings": {
+    "img": {
+     "label": "Img URL",
+     "info": "Add new img url for change"
+    },
+
+    "section_headline": {
+     "label": "Section Headline",
+     "info": "You can edit section headline"
+    },
+
+    "section_caption": {
+     "label": "Section Caption",
+     "info": "You can edit section caption"
+    },
+
+    "section_description": {
+     "label": "Section Description",
+     "info": "You can edit section description"
+    }
+   }
+  },
+
   "apps": {
    "name": "Apps",
    "settings": {

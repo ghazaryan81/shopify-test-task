@@ -11,28 +11,18 @@
       </div>
 
       <h2 class="section-headline">
-        <p>
-          <em>Hi</em>, we are <br>
-          Handmade Studio
-        </p>
+        {{ section.settings.section_headline }}
       </h2>
+
       <div class="section-context section-context--caption">
-        <p>
-          Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience
-          angel investor focus research & development value proposition graphical user interface investor.
-        </p>
-      </div>
-      <i class="horizontal-divider">&nbsp;</i>
-      <div class="section-context section-context--two-cols">
-        <p>
-          Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience
-          angel investor focus research & development value proposition graphical user interface investor.
-          Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor
-          focus research & development value proposition graphical user interface investor.
-        </p>
+        {{ section.settings.section_caption }}
       </div>
 
-      {%- comment -%} list-persons {%- endcomment -%}
+      <i class="horizontal-divider">&nbsp;</i>
+      <div class="section-context section-context--two-cols">
+        {{ section.settings.section_description }}
+      </div>
+
       <div class="list-persons">
         <div class="list-persons__images">
           <span class="person-img">&nbsp;</span>
@@ -49,20 +39,41 @@
           <div class="person-positions">The Founders of Handmade Studio</div>
         </div>
       </div>
-      {%- comment -%} /list-persons {%- endcomment -%}
     </div>
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "t:sections.ash_about.name",
+  "name": "t:sections.section_kazaryan.name",
   "settings": [
     {
       "id": "img",
       "type": "text",
       "label": "img",
+      "info": "info",
       "default": "https://hikekazarian.ru/portfolio/ashstone-studios-test-task/assets/img/img-1x.jpg"
+    },
+    {
+      "id": "section_headline",
+      "type": "richtext",
+      "label": "t:sections.section_kazaryan.section_headline.label",
+      "info": "t:sections.section_kazaryan.section_headline.info",
+      "default": "<p>Hi, we are<br>Handmade Studio</p>"
+    },
+    {
+      "id": "section_caption",
+      "type": "richtext",
+      "label": "t:sections.section_kazaryan.section_caption.label",
+      "info": "t:sections.section_kazaryan.section_caption.info",
+      "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
+    },
+    {
+      "id": "section_description",
+      "type": "richtext",
+      "label": "t:sections.section_kazaryan.section_description.label",
+      "info": "t:sections.section_kazaryan.section_description.info",
+      "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor. Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
     }
   ]
 }
