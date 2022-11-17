@@ -1,0 +1,49 @@
+{{ 'section-kazaryan.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-kazaryan.js' | asset_url }}" defer></script>
+
+<section class="section-kazaryan">
+  <div class="section-kazaryan__fix">
+    <div class="about-container about-container--left-spacer">
+      <h2 class="section-headline">
+        <p>
+          <em>Hi</em>, we are <br>
+          Handmade Studio
+        </p>
+      </h2>
+      <div class="section-context section-context--caption">
+        <p>
+          Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience
+          angel investor focus research & development value proposition graphical user interface investor.
+        </p>
+      </div>
+      <i class="horizontal-divider">&nbsp;</i>
+      <div class="section-context section-context--two-cols">
+        <p>
+          Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience
+          angel investor focus research & development value proposition graphical user interface investor.
+          Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor
+          focus research & development value proposition graphical user interface investor.
+        </p>
+      </div>
+
+      {%- comment -%} list-persons {%- endcomment -%}
+      <div class="list-persons">
+        <div class="list-persons__images">
+          <span class="person-img">&nbsp;</span>
+          <span class="person-img">&nbsp;</span>
+          <span class="person-img">&nbsp;</span>
+        </div>
+        <div class="list-persons__full-names">
+          <div class="flex-box">
+            <span class="person-full-name">Clara Williams</span>
+            <span class="person-full-name">Joyce Harper</span>
+            <span class="person-full-name">and</span>
+            <span class="person-full-name">Tanya Caldwell</span>
+          </div>
+          <div class="person-positions">The Founders of Handmade Studio</div>
+        </div>
+      </div>
+      {%- comment -%} list-persons {%- endcomment -%}
+    </div>
+  </div>
+</section>

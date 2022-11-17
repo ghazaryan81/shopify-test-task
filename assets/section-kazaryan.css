@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500&display=block");
+.flex-box {
+  display: flex;
+}
+
+.section-kazaryan {
+  display: block;
+  background: #f6f4f2;
+  border-top: solid 1px transparent;
+}
+.section-kazaryan__fix {
+  max-width: 1296px;
+  margin: 0 auto;
+}
+.section-kazaryan p {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-container {
+  max-width: 1098px;
+  margin: 0 auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-top: 263px;
+  padding-bottom: 182px;
+}
+.about-container--left-spacer {
+  padding-left: 432px;
+}
+
+.section-headline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 65px;
+  line-height: 67.14px;
+  color: #56443e;
+  letter-spacing: -2.54px;
+  padding-left: 5px;
+}
+.section-headline em {
+  margin-left: -5px;
+  display: inline-block;
+  padding-right: 8px;
+}
+
+.section-context {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 23.66px;
+  letter-spacing: -0.02px;
+  color: #000;
+  opacity: 0.6;
+}
+.section-context--caption {
+  text-decoration: none;
+  padding-top: 54px;
+  padding-bottom: 52px;
+  padding-left: 5px;
+}
+.section-context--two-cols {
+  -moz-column-count: 2;
+       column-count: 2;
+  -moz-column-gap: 1px;
+       column-gap: 1px;
+  padding-top: 25px;
+  padding-left: 5px;
+}
+
+.horizontal-divider {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: solid rgba(0, 0, 0, 0.2) 1px;
+  font-size: 0;
+  background: none;
+}
+
+.list-persons {
+  display: flex;
+  padding-top: 82px;
+}
+.list-persons__images {
+  padding-left: 23px;
+  padding-right: 30px;
+  display: flex;
+  font-size: 0;
+}
+.list-persons__full-names {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 23.66px;
+  letter-spacing: -0.02px;
+  color: #000;
+  letter-spacing: -0.31px;
+}
+
+.person-img {
+  display: block;
+  width: 43px;
+  height: 43px;
+  border: 3px solid #fff;
+  background: #ccc;
+  border-radius: 50%;
+  margin-left: -18px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.person-img:hover {
+  z-index: 100;
+}
+
+.person-full-name {
+  display: inline-block;
+  padding-right: 10px;
+}/*# sourceMappingURL=section-kazaryan.css.map */
