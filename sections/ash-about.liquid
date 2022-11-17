@@ -1,52 +1,28 @@
+{{ 'ash-about.css' | asset_url | stylesheet_tag }}
 <section class="ash-container">
   <div class="ash-container__fix">
     <div class="ash-section ash-section--about">
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-          {%- when 'headline' -%}
-            <h2 class="ash-headline">
-              {{ block.settings.text | escape }}
-            </h2>
-        {%- endcase -%}
-      {%- endfor -%}
-
+      <h2 class="ash-headline">{{ section.settings.headline }}</h2>
       <p class="ash-description">
         {{ 'sections.about.caption' | t }}
       </p>
-
       <div class="ah-horizontal-divider">&nbsp;</div>
-
-      <ul class="block-list">
-        <li class="block-list__item">
-          <p class="ash-description">
-            {{ 'sections.about.block_list_1' | t }}
-          </p>
-        </li>
-        <li class="block-list__item">
-          <p class="ash-description">
-            {{ 'sections.about.block_list_2' | t }}
-          </p>
-        </li>
-      </ul>
+      <p class="ash-description ash-description--with-cols ash-description--two-cols">
+        {{ 'sections.about.description' | t }}
+      </p>
     </div>
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "t:sections.ash-about.name",
-  "blocks": [
+  "name": "t:sections.ash_about.name",
+  "settings": [
     {
-      "type": "headline",
-      "name": "t:sections.announcement-bar.blocks.announcement.name",
-      "settings": [
-        {
-          "type": "text",
-          "id": "text",
-          "default": "Hi, we are Handmade Studio",
-          "label": "t:sections.ash-about.blocks.headline.settings.text.label"
-        }
-      ]
+      "type": "text",
+      "id": "headline",
+      "label": "t:sections.ash_about.settings.label",
+      "default": "default default"
     }
   ]
 }

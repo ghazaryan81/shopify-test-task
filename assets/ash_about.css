@@ -31,6 +31,14 @@
   color: rgba(var(--ash_description_color), 0.2);
   letter-spacing: var(--ash_description_letter_spacing);
 }
+.ash-description--with-cols {
+  text-decoration: none;
+}
+.ash-description--two-cols {
+  text-decoration: none;
+  -moz-column-count: 2;
+       column-count: 2;
+}
 
 .ah-horizontal-divider {
   list-style: none;
@@ -40,14 +48,4 @@
   width: 100%;
   border-bottom: solid rgba(0, 0, 0, 0.2) 1px;
   font-size: 0;
-}
-
-.block-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-.block-list__item {
-  text-decoration: none;
-}/*# sourceMappingURL=about.css.map */
+}/*# sourceMappingURL=ash_about.css.map */

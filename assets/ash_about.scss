@@ -43,6 +43,17 @@
  line-height: var(--ash_description_line_height);
  color: rgba(var(--ash_description_color), 0.2);
  letter-spacing: var(--ash_description_letter_spacing);
+
+ // .ash-description--with-cols
+ &--with-cols {
+  text-decoration: none;
+ }
+
+ // .ash-description--two-cols
+ &--two-cols {
+  text-decoration: none;
+  column-count: 2;
+ }
 }
 
 // .ah-horizontal-divider
@@ -52,12 +63,4 @@
  width: 100%;
  border-bottom: solid rgba(0, 0, 0, 0.2) 1px;
  font-size: 0;
-}
-
-.block-list {
- @include reset-default;
- display: flex;
- &__item {
-  text-decoration: none;
- }
 }

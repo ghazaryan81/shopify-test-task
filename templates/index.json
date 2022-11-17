@@ -1,5 +1,9 @@
 {
  "sections": {
+  "ash_about": {
+   "type": "ash-about"
+  },
+
   "image_banner": {
    "type": "image-banner",
    "blocks": {
@@ -186,6 +190,7 @@
   }
  },
  "order": [
+  "ash_about",
   "image_banner",
   "rich_text",
   "featured_collection",
