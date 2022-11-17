@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500&display=block");
 :root {
-  --section-kazaryan__fix-max-width: 129.6rem;
+  --section-kazaryan__fix--max-width: 129.6rem;
+  --about-container--padding-top: 26.4rem;
+  --about-container--padding-bottom: 18.2rem;
+  --about-container--left-spacer--padding-left: 43.2rem;
+  --about-container__img--margin-top: 1.2rem;
+  --about-container__img--margin-left: 5.2rem;
 }
 
 .flex-box {
@@ -12,7 +17,7 @@
   background: #f6f4f2;
 }
 .section-kazaryan__fix {
-  max-width: var(--section-kazaryan__fix-max-width);
+  max-width: var(--section-kazaryan__fix--max-width);
   margin: 0 auto;
 }
 .section-kazaryan p {
@@ -27,8 +32,8 @@
   position: relative;
   top: 0;
   left: 0;
-  padding-top: 264px;
-  padding-bottom: 182px;
+  padding-top: var(--about-container--padding-top);
+  padding-bottom: var(--about-container--padding-bottom);
 }
 .about-container__img-cell {
   text-decoration: none;
@@ -44,15 +49,15 @@
   font-size: 0;
 }
 .about-container--left-spacer {
-  padding-left: 432px;
+  padding-left: var(--about-container--left-spacer--padding-left);
 }
 .about-container--left-spacer .about-container__img-position {
   left: -100%;
   transform: translate(50%, 0);
 }
 .about-container--left-spacer .about-container__img-position img {
-  margin-top: 12px;
-  margin-left: 52px;
+  margin-top: var(--about-container__img--margin-top);
+  margin-left: var(--about-container__img--margin-left);
 }
 .about-container--right-spacer {
   padding-right: 432px;

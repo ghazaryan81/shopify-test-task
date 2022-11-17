@@ -6,7 +6,15 @@
 }
 
 :root {
- --section-kazaryan__fix-max-width: #{toRem(1296)};
+ --section-kazaryan__fix--max-width: #{toRem(1296)};
+ // -
+ --about-container--padding-top: #{toRem(264)};
+ --about-container--padding-bottom: #{toRem(182)};
+ // -
+ --about-container--left-spacer--padding-left: #{toRem(432)};
+ // -
+ --about-container__img--margin-top: #{toRem(12)};
+ --about-container__img--margin-left: #{toRem(52)};
 }
 
 @mixin reset-default() {
@@ -26,7 +34,7 @@
 
  // .section-kazaryan__fix
  &__fix {
-  max-width: var(--section-kazaryan__fix-max-width);
+  max-width: var(--section-kazaryan__fix--max-width);
   margin: 0 auto;
  }
 
@@ -44,8 +52,8 @@
  position: relative;
  top: 0;
  left: 0;
- padding-top: 264px;
- padding-bottom: 182px;
+ padding-top: var(--about-container--padding-top);
+ padding-bottom: var(--about-container--padding-bottom);
 
  // .about-container__img-cell
  &__img-cell {
@@ -66,13 +74,14 @@
 
  // .about-container--left-spacer
  &--left-spacer {
-  padding-left: 432px;
+  padding-left: var(--about-container--left-spacer--padding-left);
+
   #{$this}__img-position {
    left: -100%;
    transform: translate(50%, 0);
    img {
-    margin-top: 12px;
-    margin-left: 52px;
+    margin-top: var(--about-container__img--margin-top);
+    margin-left: var(--about-container__img--margin-left);
    }
   }
  }
