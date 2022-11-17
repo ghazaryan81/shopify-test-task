@@ -13,6 +13,10 @@
   max-width: 1296px;
   margin: 0 auto;
  }
+
+ p {
+  @include reset-default;
+ }
 }
 
 // .ash-section

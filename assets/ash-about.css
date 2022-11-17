@@ -3,6 +3,11 @@
   max-width: 1296px;
   margin: 0 auto;
 }
+.ash-container p {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
 .ash-section {
   margin: 0 auto;
