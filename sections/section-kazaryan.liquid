@@ -33,11 +33,9 @@
             {% when 'title' %}
               <h2>h2 - {{ product.title | escape }}</h2>
             {% when 'price' %}
-              price - {{ product.price }}
+              <p>price - {{ product.price }}</p>
             {% when 'vendor' %}
-              {%- if product.vendor -%}
-                <p>vendor - {{ product.vendor }}</p>
-              {%- endif -%}
+              <p>vendor - {{ product.vendor }}</p>
             {% when 'description' %}
               <p>descr - {{ product.description }}</p>
           {% endcase %}
