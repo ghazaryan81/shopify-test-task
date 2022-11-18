@@ -10,7 +10,14 @@
     "section_description": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor. Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>",
     "person_positions": "The Founders of Handmade Studio",
     "section_headline_font": "playfair_display_n7"
-   }
+   },
+
+   "blocks": {
+    "text": {
+     "type": "text"
+    }
+   },
+   "block_order": ["text"]
   },
   "ash_about": {
    "type": "ash-about",

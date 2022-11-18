@@ -44,29 +44,33 @@
 
       <div class="list-persons">
         <div class="list-persons__images">
-          {% for block in section.blocks %}
-            {% case block.type %}
-              {% when 'link' %}
-                <div class="link" {{ block.shopify_attributes }}>
-                  {{ block.settings.linktext | link_to: block.settings.linkurl }}
-                </div>
-              {% when 'custom-text' %}
-                <div class="text" {{ block.shopify_attributes }}>{{ block.settings['custom-text-field'] }}</div>
-            {% endcase %}
-          {% endfor %}
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'text' -%}
+                <span class="person-img">&nbsp;</span>
+            {%- endcase -%}
+          {%- endfor -%}
 
           {%- comment -%}
-             {%- for block in section.blocks -%}
-              <span class="person-img">{{ block.settings.person_1_name }}</span>
-            {%- endfor -%}
+             <span class="person-img">&nbsp;</span>
+            <span class="person-img">&nbsp;</span>
+            <span class="person-img">&nbsp;</span>
           {%- endcomment -%}
         </div>
         <div class="list-persons__full-names">
-          <div class="flex-box">
-            <span class="person-full-name">Clara Williams</span>
-            <span class="person-full-name">Joyce Harper</span>
-            <span class="person-full-name">and</span>
-            <span class="person-full-name">Tanya Caldwell</span>
+          <div class="flex-box left-shift">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'text' -%}
+                  <span class="person-full-name">Clara Williams</span>,
+              {%- endcase -%}
+            {%- endfor -%}
+
+            {%- comment -%}
+               <span class="person-full-name">Joyce Harper</span>
+              <span class="person-full-name">and</span>
+              <span class="person-full-name">Tanya Caldwell</span>
+            {%- endcomment -%}
           </div>
           <div class="person-positions">
             {{ section.settings.person_positions }}
@@ -140,29 +144,13 @@
   ],
   "blocks": [
     {
-      "type": "link",
-      "name": "Link",
+      "type": "text",
+      "name": "text",
       "settings": [
         {
-          "id": "linkurl",
-          "type": "url",
-          "label": "URL link"
-        },
-        {
-          "id": "linktext",
           "type": "text",
-          "label": "Link text"
-        }
-      ]
-    },
-    {
-      "type": "custom-text",
-      "name": "Custom Text",
-      "settings": [
-        {
-          "id": "custom-text-field",
-          "type": "textarea",
-          "label": "Text"
+          "id": "text_id",
+          "label": "text_id"
         }
       ]
     }

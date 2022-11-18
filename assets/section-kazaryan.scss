@@ -197,7 +197,11 @@
 // .person-full-name
 .person-full-name {
  display: inline-block;
- padding-right: var(--person-full-name--padding-right);
+ padding-left: var(--person-full-name--padding-right);
+}
+
+.left-shift {
+ margin-left: -8px;
 }
 
 // .person-positions
