@@ -31,13 +31,13 @@
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'title' %}
-              <h2>h2 - {{ product.title | escape }}</h2>
+              <h2>h2 - {{ block.settings.title_title }}</h2>
             {% when 'price' %}
-              <p>price - {{ product.price }}</p>
+              <p>price - {{ block.settings.price_price }}</p>
             {% when 'vendor' %}
-              <p>vendor - {{ product.vendor }}</p>
+              <p>vendor - {{ block.settings.vendor_vendor }}</p>
             {% when 'description' %}
-              <p>descr - {{ product.description }}</p>
+              <p>descr - {{ block.settings.description_description }}</p>
           {% endcase %}
         {% endfor %}
       </div>
@@ -69,26 +69,24 @@
             {%- endfor -%}
           {%- endcomment -%}
 
-          {%- comment -%}
-             <span class="person-img">&nbsp;</span>
-            <span class="person-img">&nbsp;</span>
-            <span class="person-img">&nbsp;</span>
-          {%- endcomment -%}
+          <span class="person-img">&nbsp;</span>
+          <span class="person-img">&nbsp;</span>
+          <span class="person-img">&nbsp;</span>
         </div>
         <div class="list-persons__full-names">
           <div class="flex-box left-shift">
-            {%- for block in section.blocks -%}
-              {%- case block.type -%}
-                {%- when 'text' -%}
-                  <span class="person-full-name">Clara Williams</span>,
-              {%- endcase -%}
-            {%- endfor -%}
-
             {%- comment -%}
-               <span class="person-full-name">Joyce Harper</span>
-              <span class="person-full-name">and</span>
-              <span class="person-full-name">Tanya Caldwell</span>
+               {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                  {%- when 'text' -%}
+                    <span class="person-full-name">Clara Williams</span>,
+                {%- endcase -%}
+              {%- endfor -%}
             {%- endcomment -%}
+
+            <span class="person-full-name">Joyce Harper</span>
+            <span class="person-full-name">and</span>
+            <span class="person-full-name">Tanya Caldwell</span>
           </div>
           <div class="person-positions">
             {{ section.settings.person_positions }}
@@ -148,11 +146,11 @@
       "name": "Description",
       "settings": [
         {
-          "id": "Description_Description",
+          "id": "description_description",
           "type": "text",
-          "label": "Description_Description",
-          "info": "Description_Description",
-          "default": "Description_Description"
+          "label": "description_description",
+          "info": "description_description",
+          "default": "description_description"
         }
       ]
     }
