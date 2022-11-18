@@ -22,6 +22,12 @@
  display: block;
  background: var(--section-kazaryan--background);
 
+ // .section-kazaryan--font-family
+ &--font-family {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+ }
+
  // .section-kazaryan__fix
  &__fix {
   @include margin-x;
@@ -109,11 +115,7 @@
 // .section-context
 .section-context {
  @include reset-default;
- font-family: "Poppins", sans-serif;
- font-style: normal;
- color: #000;
- font-weight: 400;
- opacity: 0.6;
+ color: var(--section-context--color);
  font-size: var(--section-context--font-size);
  line-height: var(--section-context--line-height);
  letter-spacing: var(--section-context--letter-spacing);
@@ -138,9 +140,6 @@
  }
 }
 
-/*
-var(--horizontal-divider--border-bottom) rgba(0, 0, 0, 0.2)
-*/
 // .horizontal-divider
 .horizontal-divider {
  @include reset-default;
@@ -166,9 +165,7 @@ var(--horizontal-divider--border-bottom) rgba(0, 0, 0, 0.2)
  }
 
  &__full-names {
-  font-family: "Poppins", sans-serif;
-  color: #000;
-  font-weight: 400;
+  color: var(--list-persons__full-names--color);
   font-size: var(--list-persons__full-names--font-size);
   line-height: var(--list-persons__full-names--line-height);
   letter-spacing: var(--list-persons__full-names--letter-spacing);

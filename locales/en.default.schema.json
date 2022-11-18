@@ -474,6 +474,14 @@
      "info": "You can edit field description"
     },
 
+    "section_headline_font_family": {
+     "label": "Field headline font family",
+     "info": "You can edit headline font family"
+    },
+    "section_text_font_family": {
+     "label": "Field text font family",
+     "info": "You can edit text font family"
+    },
     "person_positions": {
      "label": "Field positions",
      "info": "You can edit field description"

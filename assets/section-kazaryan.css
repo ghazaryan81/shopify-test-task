@@ -9,6 +9,10 @@
   display: block;
   background: var(--section-kazaryan--background);
 }
+.section-kazaryan--font-family {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
 .section-kazaryan__fix {
   margin-left: auto;
   margin-right: auto;
@@ -81,11 +85,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  color: #000;
-  font-weight: 400;
-  opacity: 0.6;
+  color: var(--section-context--color);
   font-size: var(--section-context--font-size);
   line-height: var(--section-context--line-height);
   letter-spacing: var(--section-context--letter-spacing);
@@ -108,9 +108,6 @@
   padding-right: var(--section-context--two-cols--padding-right);
 }
 
-/*
-var(--horizontal-divider--border-bottom) rgba(0, 0, 0, 0.2)
-*/
 .horizontal-divider {
   list-style: none;
   padding: 0;
@@ -134,9 +131,7 @@ var(--horizontal-divider--border-bottom) rgba(0, 0, 0, 0.2)
   padding-right: var(--list-persons__images--padding-right);
 }
 .list-persons__full-names {
-  font-family: "Poppins", sans-serif;
-  color: #000;
-  font-weight: 400;
+  color: var(--list-persons__full-names--color);
   font-size: var(--list-persons__full-names--font-size);
   line-height: var(--list-persons__full-names--line-height);
   letter-spacing: var(--list-persons__full-names--letter-spacing);
