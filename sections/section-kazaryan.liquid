@@ -8,7 +8,9 @@
           <img src="{{ section.settings.img }}" alt="" width="306" height="376" loading="lazy">
         </div>
       </div>
-
+      {%- style -%}
+        {{ section.settings.section_headline_font | font_face }}
+      {%- endstyle -%}
       <h2
         class="section-headline"
         style="font-family: '{{ section.settings.section_headline_font.family }}'"
