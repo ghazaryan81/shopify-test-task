@@ -13,8 +13,6 @@
     <div class="about-container {% if section.settings.castling_segments == false %}about-container--left-spacer{% elsif section.settings.castling_segments == true %}about-container--right-spacer{% endif %}">
       <div class="about-container__img-cell">
         <div class="about-container__img-position">
-          {%- comment -%} <img src="{{ section.settings.img }}" alt="" width="306" height="376" loading="lazy"> {%- endcomment -%}
-
           {% if section.settings.section_image.src != blank %}
             <img
               src="{{ section.settings.section_image | image_url: width: 306, height: 376 }}"
@@ -79,13 +77,6 @@
       "default": false
     },
     {
-      "id": "img",
-      "type": "text",
-      "label": "t:sections.section_kazaryan.settings.img.label",
-      "info": "t:sections.section_kazaryan.settings.img.info",
-      "default": "https://hikekazarian.ru/portfolio/ashstone-studios-test-task/assets/img/img-1x.jpg"
-    },
-    {
       "id": "section_headline",
       "type": "richtext",
       "label": "t:sections.section_kazaryan.settings.section_headline.label",
@@ -116,22 +107,75 @@
     {
       "type": "font_picker",
       "id": "section_headline_font_family",
-      "label": "t:sections.section_kazaryan.settings.section_headline_font_family.info",
+      "label": "t:sections.section_kazaryan.settings.section_headline_font_family.label",
       "info": "t:sections.section_kazaryan.settings.section_headline_font_family.info",
       "default": "playfair_display_n7"
     },
     {
       "type": "font_picker",
       "id": "section_text_font_family",
-      "label": "t:sections.section_kazaryan.settings.section_headline_font_family.info",
-      "info": "t:sections.section_kazaryan.settings.section_headline_font_family.info",
+      "label": "t:sections.section_kazaryan.settings.section_text_font_family.label",
+      "info": "t:sections.section_kazaryan.settings.section_text_font_family.info",
       "default": "poppins_n4"
     },
     {
       "type": "image_picker",
       "id": "section_image",
-      "label": "img",
-      "info": "img"
+      "label": "t:sections.section_kazaryan.settings.section_image.label",
+      "info": "t:sections.section_kazaryan.settings.section_image.info"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "person_1",
+      "name": "person_1",
+      "settings": [
+        {
+          "type": "text",
+          "id": "person_1_name",
+          "default": "Person 1 FullName",
+          "label": "Person 1 FullName"
+        },
+        {
+          "type": "image_picker",
+          "id": "person_1_img",
+          "label": "Person 1 Image"
+        }
+      ]
+    },
+    {
+      "type": "person_2",
+      "name": "person_2",
+      "settings": [
+        {
+          "type": "text",
+          "id": "person_2_name",
+          "default": "Person 2 FullName",
+          "label": "Person 2 FullName"
+        },
+        {
+          "type": "image_picker",
+          "id": "person_2_img",
+          "label": "Person 2 Image"
+        }
+      ]
+    },
+    {
+      "type": "person_3",
+      "name": "person_3",
+      "settings": [
+        {
+          "type": "text",
+          "id": "person_3_name",
+          "default": "Person 3 FullName",
+          "label": "Person 3 FullName"
+        },
+        {
+          "type": "image_picker",
+          "id": "person_3_img",
+          "label": "Person 3 Image"
+        }
+      ]
     }
   ]
 }

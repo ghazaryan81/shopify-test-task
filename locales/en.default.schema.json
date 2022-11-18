@@ -485,6 +485,11 @@
     "person_positions": {
      "label": "Field positions",
      "info": "You can edit field description"
+    },
+
+    "section_image": {
+     "label": "Section image",
+     "info": "You can edit section image"
     }
    }
   },
