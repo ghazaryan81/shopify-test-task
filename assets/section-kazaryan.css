@@ -69,7 +69,6 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  font-family: "Playfair Display", serif;
   font-weight: 400;
   color: var(--section-headline--color);
   font-size: var(--section-headline--font-size);
@@ -143,10 +142,6 @@ var(--horizontal-divider--border-bottom) rgba(0, 0, 0, 0.2)
   letter-spacing: var(--list-persons__full-names--letter-spacing);
 }
 
-/*
---person-img--border-color #fff
-
-*/
 .person-img {
   left: 0;
   top: 0;

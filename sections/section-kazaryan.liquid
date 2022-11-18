@@ -9,7 +9,10 @@
         </div>
       </div>
 
-      <h2 class="section-headline">
+      <h2
+        class="section-headline"
+        style="font-family: '{{ section.settings.section_headline_font.family }}'"
+      >
         {{ section.settings.section_headline }}
       </h2>
 
@@ -90,6 +93,13 @@
       "label": "t:sections.section_kazaryan.settings.person_positions.label",
       "info": "t:sections.section_kazaryan.settings.person_positions.info",
       "default": "The Founders of Handmade Studio"
+    },
+    {
+      "type": "font_picker",
+      "id": "section_headline_font",
+      "label": "section headline font",
+      "info": "section headline font",
+      "default": "playfair_display_n7"
     }
   ]
 }
