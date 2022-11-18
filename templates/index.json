@@ -2,15 +2,6 @@
  "sections": {
   "section_kazaryan": {
    "type": "section-kazaryan",
-   "settings": {
-    "castling_segments": false,
-    "img": "https://hikekazarian.ru/portfolio/ashstone-studios-test-task/assets/img/img-1x.jpg",
-    "section_headline": "<p>Hi, we are<br/>Handmade Studio</p>",
-    "section_caption": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>",
-    "section_description": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor. Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>",
-    "person_positions": "The Founders of Handmade Studio",
-    "section_headline_font": "playfair_display_n7"
-   },
 
    "blocks": {
     "title": {
@@ -30,7 +21,17 @@
      "settings": {}
     }
    },
-   "block_order": ["title", "price", "description", "vendor"]
+   "block_order": ["title", "price", "description", "vendor"],
+
+   "settings": {
+    "castling_segments": false,
+    "img": "https://hikekazarian.ru/portfolio/ashstone-studios-test-task/assets/img/img-1x.jpg",
+    "section_headline": "<p>Hi, we are<br/>Handmade Studio</p>",
+    "section_caption": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>",
+    "section_description": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor. Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>",
+    "person_positions": "The Founders of Handmade Studio",
+    "section_headline_font": "playfair_display_n7"
+   }
   },
   "ash_about": {
    "type": "ash-about",
