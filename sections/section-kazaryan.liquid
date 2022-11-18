@@ -2,7 +2,7 @@
 
 <section class="section-kazaryan">
   <div class="section-kazaryan__fix">
-    <div class="about-container about-container--left-spacer">
+    <div class="about-container {% if section.settings.castling_segments == false %}about-container--left-spacer{% elsif section.settings.castling_segments == true %}about-container--right-spacer{% endif %}">
       <div class="about-container__img-cell">
         <div class="about-container__img-position">
           <img src="{{ section.settings.img }}" alt="" width="306" height="376" loading="lazy">
@@ -49,10 +49,17 @@
   "name": "t:sections.section_kazaryan.name",
   "settings": [
     {
+      "id": "castling_segments",
+      "type": "checkbox",
+      "label": "t:sections.section_kazaryan.settings.castling_segments.label",
+      "info": "t:sections.section_kazaryan.settings.castling_segments.info",
+      "default": false
+    },
+    {
       "id": "img",
       "type": "text",
-      "label": "img",
-      "info": "info",
+      "label": "t:sections.section_kazaryan.settings.img.label",
+      "info": "t:sections.section_kazaryan.settings.img.info",
       "default": "https://hikekazarian.ru/portfolio/ashstone-studios-test-task/assets/img/img-1x.jpg"
     },
     {

@@ -449,6 +449,11 @@
   "section_kazaryan": {
    "name": "About section",
    "settings": {
+    "castling_segments": {
+     "label": "Img URL",
+     "info": "Add new img url for change"
+    },
+
     "img": {
      "label": "Img URL",
      "info": "Add new img url for change"
