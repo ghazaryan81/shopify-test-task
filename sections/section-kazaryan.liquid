@@ -26,6 +26,24 @@
           {% endif %}
         </div>
       </div>
+
+      <div style="font-size:20px">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'title' %}
+              <h2>h2 - {{ product.title | escape }}</h2>
+            {% when 'price' %}
+              price - {{ product.price }}
+            {% when 'vendor' %}
+              {%- if product.vendor -%}
+                <p>vendor - {{ product.vendor }}</p>
+              {%- endif -%}
+            {% when 'description' %}
+              <p>descr - {{ product.description }}</p>
+          {% endcase %}
+        {% endfor %}
+      </div>
+
       <h2
         class="section-headline"
         style="font-family: '{{ section.settings.section_headline_font_family.family }}'"
@@ -44,12 +62,14 @@
 
       <div class="list-persons">
         <div class="list-persons__images">
-          {%- for block in section.blocks -%}
-            {%- case block.type -%}
-              {%- when 'text' -%}
-                <span class="person-img">&nbsp;</span>
-            {%- endcase -%}
-          {%- endfor -%}
+          <span class="person-img">&nbsp;</span>
+          {%- comment -%}
+             {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'text' -%}
+              {%- endcase -%}
+            {%- endfor -%}
+          {%- endcomment -%}
 
           {%- comment -%}
              <span class="person-img">&nbsp;</span>
@@ -85,6 +105,28 @@
 {
   "name": "t:sections.section_kazaryan.name",
   "tag": "section",
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1
+    },
+    {
+      "type": "price",
+      "name": "Price",
+      "limit": 1
+    },
+    {
+      "type": "vendor",
+      "name": "Vendor",
+      "limit": 1
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1
+    }
+  ],
   "settings": [
     {
       "id": "castling_segments",
@@ -140,19 +182,6 @@
       "id": "section_image",
       "label": "t:sections.section_kazaryan.settings.section_image.label",
       "info": "t:sections.section_kazaryan.settings.section_image.info"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "text",
-      "name": "text",
-      "settings": [
-        {
-          "type": "text",
-          "id": "text_id",
-          "label": "text_id"
-        }
-      ]
     }
   ]
 }

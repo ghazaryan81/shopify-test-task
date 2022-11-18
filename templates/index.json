@@ -13,11 +13,24 @@
    },
 
    "blocks": {
-    "text": {
-     "type": "text"
+    "title": {
+     "type": "title",
+     "settings": {}
+    },
+    "price": {
+     "type": "price",
+     "settings": {}
+    },
+    "vendor": {
+     "type": "vendor",
+     "settings": {}
+    },
+    "description": {
+     "type": "description",
+     "settings": {}
     }
    },
-   "block_order": ["text"]
+   "block_order": ["title", "price", "description", "vendor"]
   },
   "ash_about": {
    "type": "ash-about",
