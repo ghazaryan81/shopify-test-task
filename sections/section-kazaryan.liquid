@@ -45,16 +45,18 @@
       <h2
         class="section-headline"
         style="font-family: '{{ section.settings.section_headline_font_family.family }}'"
+        {{ block.shopify_attributes }}
       >
         {{ section.settings.section_headline }}
       </h2>
 
-      <div class="section-context section-context--caption">
+      <div class="section-context section-context--caption" {{ block.shopify_attributes }}>
         {{ section.settings.section_caption }}
       </div>
 
       <i class="horizontal-divider">&nbsp;</i>
-      <div class="section-context section-context--two-cols">
+
+      <div class="section-context section-context--two-cols" {{ block.shopify_attributes }}>
         {{ section.settings.section_description }}
       </div>
 
@@ -88,7 +90,7 @@
             <span class="person-full-name">and</span>
             <span class="person-full-name">Tanya Caldwell</span>
           </div>
-          <div class="person-positions">
+          <div class="person-positions" {{ block.shopify_attributes }}>
             {{ section.settings.person_positions }}
           </div>
         </div>
