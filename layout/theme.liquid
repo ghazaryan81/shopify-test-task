@@ -50,6 +50,7 @@
         {% assign diff = 16 | times: 37.5 | divided_by: 100 %}
         {% assign base = html_font_size | minus: diff %}
 
+        --section-kazaryan--background: {{ settings["section-kazaryan--background"] }};
         --section-kazaryan__fix--max-width: {{ settings["section-kazaryan__fix--max-width"] | divided_by: base | append: "rem" }};
         --about-container--padding-top: {{ settings["about-container--padding-top"] | divided_by: base | append: "rem" }};
         --about-container--padding-bottom: {{ settings["about-container--padding-bottom"] | divided_by: base | append: "rem" }};
@@ -59,6 +60,7 @@
         --about-container--right-spacer--padding-right: {{ settings["about-container--right-spacer--padding-right"] | divided_by: base | append: "rem" }};
         --about-container--right-spacer__img--margin-top: {{ settings["about-container--right-spacer__img--margin-top"] | divided_by: base | append: "rem" }};
         --about-container--right-spacer__img--margin-left: {{ settings["about-container--right-spacer__img--margin-left"] | divided_by: base | append: "rem" }};
+        --section-headline--color: {{ settings["section-headline--color"] }};
         --section-headline--font-size: {{ settings["section-headline--font-size"] | divided_by: base | append: "rem" }};
         --section-headline--line-height: {{ settings["section-headline--line-height"] | divided_by: base | append: "rem" }};
         --section-headline--letter-spacing: {{ settings["section-headline--letter-spacing"] | divided_by: base | append: "rem" }};
@@ -81,10 +83,16 @@
         --list-persons__full-names--font-size: {{ settings["list-persons__full-names--font-size"] | divided_by: base | append: "rem" }};
         --list-persons__full-names--line-height: {{ settings["list-persons__full-names--line-height"] | divided_by: base | append: "rem" }};
         --list-persons__full-names--letter-spacing: {{ settings["list-persons__full-names--letter-spacing"] | divided_by: base | append: "rem" }};
+        --person-img--background: {{ settings["person-img--background"] }};
+        --person-img--border-color: {{ settings["person-img--border-color"] }};
         --person-img--width: {{ settings["person-img--width"] | divided_by: base | append: "rem" }};
         --person-img--height: {{ settings["person-img--height"] | divided_by: base | append: "rem" }};
         --person-img--margin-left: {{ settings["person-img--margin-left"] | divided_by: base | append: "rem" }};
         --person-full-name--padding-right: {{ settings["person-full-name--padding-right"] | divided_by: base | append: "rem" }};
+        --section-kazaryan__fix--max-width: {{ settings["section-kazaryan__fix--max-width"] | divided_by: base | append: "rem" }};
+        --about-container--max-width: {{ settings["about-container--max-width"] | divided_by: base | append: "rem" }};
+        --horizontal-divider--border-bottom: {{ settings["horizontal-divider--border-bottom"] }};
+        --person-positions--color: {{ settings["person-positions--color"] }};
 
         --ash_headline_font_family: {{ settings.ash_headline_font_family }};
         --ash_headline_color: {{ settings.ash_headline_color }};

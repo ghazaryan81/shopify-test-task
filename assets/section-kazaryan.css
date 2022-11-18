@@ -1,3 +1,5 @@
+/* stylelint-disable */
+/* stylelint-enable */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500&display=block");
 .flex-box {
   display: flex;
@@ -5,11 +7,12 @@
 
 .section-kazaryan {
   display: block;
-  background: #f6f4f2;
+  background: var(--section-kazaryan--background);
 }
 .section-kazaryan__fix {
+  margin-left: auto;
+  margin-right: auto;
   max-width: var(--section-kazaryan__fix--max-width);
-  margin: 0 auto;
 }
 .section-kazaryan p {
   list-style: none;
@@ -18,19 +21,19 @@
 }
 
 .about-container {
-  max-width: 1098px;
-  margin: 0 auto;
-  position: relative;
-  top: 0;
   left: 0;
+  top: 0;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--about-container--max-width);
   padding-top: var(--about-container--padding-top);
   padding-bottom: var(--about-container--padding-bottom);
 }
 .about-container__img-cell {
-  text-decoration: none;
-  position: relative;
   left: 0;
   top: 0;
+  position: relative;
   width: 100%;
   font-size: 0;
 }
@@ -68,7 +71,7 @@
   margin: 0;
   font-family: "Playfair Display", serif;
   font-weight: 400;
-  color: #56443e;
+  color: var(--section-headline--color);
   font-size: var(--section-headline--font-size);
   line-height: var(--section-headline--line-height);
   letter-spacing: var(--section-headline--letter-spacing);
@@ -84,25 +87,31 @@
   color: #000;
   font-weight: 400;
   opacity: 0.6;
-  font-size: 14px;
-  line-height: 23.66px;
-  letter-spacing: -0.02px;
-  word-spacing: -2.8px;
+  font-size: var(--section-context--font-size);
+  line-height: var(--section-context--line-height);
+  letter-spacing: var(--section-context--letter-spacing);
+  word-spacing: var(--section-context--word-spacing);
 }
 .section-context--caption {
   text-decoration: none;
-  padding: 54px 40px 52px 5px;
+  padding-top: var(--section-context--caption--padding-top);
+  padding-right: var(--section-context--caption--padding-right);
+  padding-bottom: var(--section-context--caption--padding-bottom);
+  padding-left: var(--section-context--caption--padding-left);
 }
 .section-context--two-cols {
   -moz-column-count: 2;
        column-count: 2;
-  -moz-column-gap: 21px;
-       column-gap: 21px;
-  padding-top: 25px;
-  padding-left: 5px;
-  padding-right: 20px;
+  -moz-column-gap: var(--section-context--two-cols--column-gap);
+       column-gap: var(--section-context--two-cols--column-gap);
+  padding-top: var(--section-context--two-cols--padding-top);
+  padding-left: var(--section-context--two-cols--padding-left);
+  padding-right: var(--section-context--two-cols--padding-right);
 }
 
+/*
+var(--horizontal-divider--border-bottom) rgba(0, 0, 0, 0.2)
+*/
 .horizontal-divider {
   list-style: none;
   padding: 0;
@@ -110,41 +119,45 @@
   display: block;
   width: 100%;
   border: 0;
-  border-bottom: solid rgba(0, 0, 0, 0.2) 1px;
+  border-bottom: solid var(--horizontal-divider--border-bottom) 1px;
   font-size: 0;
   background: none;
 }
 
 .list-persons {
   display: flex;
-  padding-top: 82px;
+  padding-top: var(--list-persons--padding-top);
 }
 .list-persons__images {
-  padding-left: 23px;
-  padding-right: 30px;
   display: flex;
   font-size: 0;
+  padding-left: var(--list-persons__images--padding-left);
+  padding-right: var(--list-persons__images--padding-right);
 }
 .list-persons__full-names {
   font-family: "Poppins", sans-serif;
   color: #000;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 23.66px;
-  letter-spacing: -0.31px;
+  font-size: var(--list-persons__full-names--font-size);
+  line-height: var(--list-persons__full-names--line-height);
+  letter-spacing: var(--list-persons__full-names--letter-spacing);
 }
 
+/*
+--person-img--border-color #fff
+
+*/
 .person-img {
+  left: 0;
+  top: 0;
+  position: relative;
   display: block;
   border-radius: 50%;
-  border: 3px solid #fff;
-  width: 43px;
-  height: 43px;
-  margin-left: -18px;
-  background: #ccc;
-  position: relative;
-  top: 0;
-  left: 0;
+  border: 3px solid var(--person-img--border-color);
+  background: var(--person-img--background);
+  width: var(--person-img--width);
+  height: var(--person-img--height);
+  margin-left: var(--person-img--margin-left);
 }
 .person-img:hover {
   z-index: 100;
@@ -152,9 +165,9 @@
 
 .person-full-name {
   display: inline-block;
-  padding-right: 8px;
+  padding-right: var(--person-full-name--padding-right);
 }
 
 .person-positions {
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--person-positions--color);
 }/*# sourceMappingURL=section-kazaryan.css.map */

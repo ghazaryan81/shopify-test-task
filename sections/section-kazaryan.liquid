@@ -1,6 +1,6 @@
 {{ 'section-kazaryan.css' | asset_url | stylesheet_tag }}
 
-<section class="section-kazaryan">
+<div class="section-kazaryan">
   <div class="section-kazaryan__fix">
     <div class="about-container {% if section.settings.castling_segments == false %}about-container--left-spacer{% elsif section.settings.castling_segments == true %}about-container--right-spacer{% endif %}">
       <div class="about-container__img-cell">
@@ -42,11 +42,12 @@
       </div>
     </div>
   </div>
-</section>
+</div>
 
 {% schema %}
 {
   "name": "t:sections.section_kazaryan.name",
+  "tag": "section",
   "settings": [
     {
       "id": "castling_segments",

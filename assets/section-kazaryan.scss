@@ -1,4 +1,6 @@
 @use "sass:math";
+@import "position";
+@import "margin";
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500&display=block");
 
 @function toRem($value) {
@@ -18,12 +20,12 @@
 // .section-kazaryan
 .section-kazaryan {
  display: block;
- background: #f6f4f2;
+ background: var(--section-kazaryan--background);
 
  // .section-kazaryan__fix
  &__fix {
+  @include margin-x;
   max-width: var(--section-kazaryan__fix--max-width);
-  margin: 0 auto;
  }
 
  // .section-kazaryan__fix p
@@ -35,20 +37,15 @@
 // .about-container
 .about-container {
  $this: &;
- max-width: 1098px;
- margin: 0 auto;
- position: relative;
- top: 0;
- left: 0;
+ @include p;
+ @include margin-x;
+ max-width: var(--about-container--max-width);
  padding-top: var(--about-container--padding-top);
  padding-bottom: var(--about-container--padding-bottom);
 
  // .about-container__img-cell
  &__img-cell {
-  text-decoration: none;
-  position: relative;
-  left: 0;
-  top: 0;
+  @include p;
   width: 100%;
   font-size: 0;
  }
@@ -64,9 +61,11 @@
  &--left-spacer {
   padding-left: var(--about-container--left-spacer--padding-left);
 
+  // .about-container__img-position
   #{$this}__img-position {
    left: -100%;
    transform: translate(50%, 0);
+   // .about-container__img-position img
    img {
     margin-top: var(--about-container--left-spacer__img--margin-top);
     margin-left: var(--about-container--left-spacer__img--margin-left);
@@ -78,9 +77,11 @@
  &--right-spacer {
   padding-right: var(--about-container--right-spacer--padding-right);
 
+  // .about-container__img-position
   #{$this}__img-position {
    left: 100%;
    transform: translate(50%, 0);
+   // .about-container__img-position img
    img {
     margin-top: var(--about-container--right-spacer__img--margin-top);
     margin-left: var(--about-container--right-spacer__img--margin-left);
@@ -94,7 +95,7 @@
  @include reset-default;
  font-family: "Playfair Display", serif;
  font-weight: 400;
- color: #56443e;
+ color: var(--section-headline--color);
  font-size: var(--section-headline--font-size);
  line-height: var(--section-headline--line-height);
  letter-spacing: var(--section-headline--letter-spacing);
@@ -133,13 +134,16 @@
  }
 }
 
+/*
+var(--horizontal-divider--border-bottom) rgba(0, 0, 0, 0.2)
+*/
 // .horizontal-divider
 .horizontal-divider {
  @include reset-default;
  display: block;
  width: 100%;
  border: 0;
- border-bottom: solid rgba(0, 0, 0, 0.2) 1px;
+ border-bottom: solid var(--horizontal-divider--border-bottom) 1px;
  font-size: 0;
  background: none;
 }
@@ -167,15 +171,18 @@
  }
 }
 
+/*
+--person-img--border-color #fff
+
+*/
+
 // .person-img
 .person-img {
+ @include p;
  display: block;
  border-radius: 50%;
- border: 3px solid #fff;
- background: #ccc;
- position: relative;
- top: 0;
- left: 0;
+ border: 3px solid var(--person-img--border-color);
+ background: var(--person-img--background);
  width: var(--person-img--width);
  height: var(--person-img--height);
  margin-left: var(--person-img--margin-left);
@@ -183,11 +190,6 @@
   z-index: 100;
  }
 }
-
-/*
-
-
-*/
 
 // .person-full-name
 .person-full-name {
@@ -197,5 +199,5 @@
 
 // .person-positions
 .person-positions {
- color: rgba(0, 0, 0, 0.6);
+ color: var(--person-positions--color);
 }
