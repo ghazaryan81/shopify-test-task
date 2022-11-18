@@ -44,9 +44,22 @@
 
       <div class="list-persons">
         <div class="list-persons__images">
-          <span class="person-img">&nbsp;</span>
-          <span class="person-img">&nbsp;</span>
-          <span class="person-img">&nbsp;</span>
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'link' %}
+                <div class="link" {{ block.shopify_attributes }}>
+                  {{ block.settings.linktext | link_to: block.settings.linkurl }}
+                </div>
+              {% when 'custom-text' %}
+                <div class="text" {{ block.shopify_attributes }}>{{ block.settings['custom-text-field'] }}</div>
+            {% endcase %}
+          {% endfor %}
+
+          {%- comment -%}
+             {%- for block in section.blocks -%}
+              <span class="person-img">{{ block.settings.person_1_name }}</span>
+            {%- endfor -%}
+          {%- endcomment -%}
         </div>
         <div class="list-persons__full-names">
           <div class="flex-box">
@@ -127,53 +140,29 @@
   ],
   "blocks": [
     {
-      "type": "person_1",
-      "name": "person_1",
+      "type": "link",
+      "name": "Link",
       "settings": [
         {
-          "type": "text",
-          "id": "person_1_name",
-          "default": "Person 1 FullName",
-          "label": "Person 1 FullName"
+          "id": "linkurl",
+          "type": "url",
+          "label": "URL link"
         },
         {
-          "type": "image_picker",
-          "id": "person_1_img",
-          "label": "Person 1 Image"
+          "id": "linktext",
+          "type": "text",
+          "label": "Link text"
         }
       ]
     },
     {
-      "type": "person_2",
-      "name": "person_2",
+      "type": "custom-text",
+      "name": "Custom Text",
       "settings": [
         {
-          "type": "text",
-          "id": "person_2_name",
-          "default": "Person 2 FullName",
-          "label": "Person 2 FullName"
-        },
-        {
-          "type": "image_picker",
-          "id": "person_2_img",
-          "label": "Person 2 Image"
-        }
-      ]
-    },
-    {
-      "type": "person_3",
-      "name": "person_3",
-      "settings": [
-        {
-          "type": "text",
-          "id": "person_3_name",
-          "default": "Person 3 FullName",
-          "label": "Person 3 FullName"
-        },
-        {
-          "type": "image_picker",
-          "id": "person_3_img",
-          "label": "Person 3 Image"
+          "id": "custom-text-field",
+          "type": "textarea",
+          "label": "Text"
         }
       ]
     }
