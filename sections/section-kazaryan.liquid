@@ -13,7 +13,19 @@
     <div class="about-container {% if section.settings.castling_segments == false %}about-container--left-spacer{% elsif section.settings.castling_segments == true %}about-container--right-spacer{% endif %}">
       <div class="about-container__img-cell">
         <div class="about-container__img-position">
-          <img src="{{ section.settings.img }}" alt="" width="306" height="376" loading="lazy">
+          {%- comment -%} <img src="{{ section.settings.img }}" alt="" width="306" height="376" loading="lazy"> {%- endcomment -%}
+
+          {% if section.settings.section_image.src != blank %}
+            <img
+              src="{{ section.settings.section_image | image_url: width: 306, height: 376 }}"
+              alt="{{ section.settings.section_image.alt }}"
+              width="306"
+              height="376"
+              loading="lazy"
+            >
+          {% elsif section.settings.section_image.src == blank %}
+            {{ 'collection-1' | placeholder_svg_tag }}
+          {% endif %}
         </div>
       </div>
       <h2
@@ -114,6 +126,12 @@
       "label": "t:sections.section_kazaryan.settings.section_headline_font_family.info",
       "info": "t:sections.section_kazaryan.settings.section_headline_font_family.info",
       "default": "poppins_n4"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "img",
+      "info": "img"
     }
   ]
 }
