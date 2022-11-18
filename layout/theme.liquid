@@ -46,12 +46,50 @@
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
       :root {
+        {% assign html_font_size = 16 %}
+        {% assign diff = 16 | times: 37.5 | divided_by: 100 %}
+        {% assign base = html_font_size | minus: diff %}
+
+        --section-kazaryan__fix--max-width: {{ settings["section-kazaryan__fix--max-width"] | divided_by: base | append: "rem" }};
+        --about-container--padding-top: {{ settings["about-container--padding-top"] | divided_by: base | append: "rem" }};
+        --about-container--padding-bottom: {{ settings["about-container--padding-bottom"] | divided_by: base | append: "rem" }};
+        --about-container--left-spacer--padding-left: {{ settings["about-container--left-spacer--padding-left"] | divided_by: base | append: "rem" }};
+        --about-container--left-spacer__img--margin-top: {{ settings["about-container--left-spacer__img--margin-top"] | divided_by: base | append: "rem" }};
+        --about-container--left-spacer__img--margin-left: {{ settings["about-container--left-spacer__img--margin-left"] | divided_by: base | append: "rem" }};
+        --about-container--right-spacer--padding-right: {{ settings["about-container--right-spacer--padding-right"] | divided_by: base | append: "rem" }};
+        --about-container--right-spacer__img--margin-top: {{ settings["about-container--right-spacer__img--margin-top"] | divided_by: base | append: "rem" }};
+        --about-container--right-spacer__img--margin-left: {{ settings["about-container--right-spacer__img--margin-left"] | divided_by: base | append: "rem" }};
+        --section-headline--font-size: {{ settings["section-headline--font-size"] | divided_by: base | append: "rem" }};
+        --section-headline--line-height: {{ settings["section-headline--line-height"] | divided_by: base | append: "rem" }};
+        --section-headline--letter-spacing: {{ settings["section-headline--letter-spacing"] | divided_by: base | append: "rem" }};
+        --section-headline--padding-left: {{ settings["section-headline--padding-left"] | divided_by: base | append: "rem" }};
+        --section-context--font-size: {{ settings["section-context--font-size"] | divided_by: base | append: "rem" }};
+        --section-context--line-height: {{ settings["section-context--line-height"] | divided_by: base | append: "rem" }};
+        --section-context--letter-spacing: {{ settings["section-context--letter-spacing"] | divided_by: base | append: "rem" }};
+        --section-context--word-spacing: {{ settings["section-context--word-spacing"] | divided_by: base | append: "rem" }};
+        --section-context--two-cols--column-gap: {{ settings["section-context--two-cols--column-gap"] | divided_by: base | append: "rem" }};
+        --section-context--two-cols--padding-top: {{ settings["section-context--two-cols--padding-top"] | divided_by: base | append: "rem" }};
+        --section-context--two-cols--padding-left: {{ settings["section-context--two-cols--padding-left"] | divided_by: base | append: "rem" }};
+        --section-context--two-cols--padding-right: {{ settings["section-context--two-cols--padding-right"] | divided_by: base | append: "rem" }};
+        --list-persons--padding-top: {{ settings["list-persons--padding-top"] | divided_by: base | append: "rem" }};
+        --list-persons__images--padding-left: {{ settings["list-persons__images--padding-left"] | divided_by: base | append: "rem" }};
+        --list-persons__images--padding-right: {{ settings["list-persons__images--padding-right"] | divided_by: base | append: "rem" }};
+        --section-context--caption--padding-top: {{ settings["section-context--caption--padding-top"] | divided_by: base | append: "rem" }};
+        --section-context--caption--padding-right: {{ settings["section-context--caption--padding-right"] | divided_by: base | append: "rem" }};
+        --section-context--caption--padding-bottom: {{ settings["section-context--caption--padding-bottom"] | divided_by: base | append: "rem" }};
+        --section-context--caption--padding-left: {{ settings["section-context--caption--padding-left"] | divided_by: base | append: "rem" }};
+        --list-persons__full-names--font-size: {{ settings["list-persons__full-names--font-size"] | divided_by: base | append: "rem" }};
+        --list-persons__full-names--line-height: {{ settings["list-persons__full-names--line-height"] | divided_by: base | append: "rem" }};
+        --list-persons__full-names--letter-spacing: {{ settings["list-persons__full-names--letter-spacing"] | divided_by: base | append: "rem" }};
+        --person-img--width: {{ settings["person-img--width"] | divided_by: base | append: "rem" }};
+        --person-img--height: {{ settings["person-img--height"] | divided_by: base | append: "rem" }};
+        --person-img--margin-left: {{ settings["person-img--margin-left"] | divided_by: base | append: "rem" }};
+        --person-full-name--padding-right: {{ settings["person-full-name--padding-right"] | divided_by: base | append: "rem" }};
 
         --ash_headline_font_family: {{ settings.ash_headline_font_family }};
         --ash_headline_color: {{ settings.ash_headline_color }};
         --ash_headline_font_size: {{ settings.ash_headline_font_size }}px;
         --ash_headline_line_height: {{ settings.ash_headline_line_height }}px;
-
         --ash_description_font_family: {{ settings.ash_description_font_family }};
         --ash_description_color: {{ settings.ash_description_color }};
         --ash_description_font_size: {{ settings.ash_description_font_size }}px;

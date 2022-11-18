@@ -1,5 +1,4 @@
 {{ 'section-kazaryan.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'section-kazaryan.js' | asset_url }}" defer></script>
 
 <section class="section-kazaryan">
   <div class="section-kazaryan__fix">
@@ -36,7 +35,9 @@
             <span class="person-full-name">and</span>
             <span class="person-full-name">Tanya Caldwell</span>
           </div>
-          <div class="person-positions">The Founders of Handmade Studio</div>
+          <div class="person-positions">
+            {{ section.settings.person_positions }}
+          </div>
         </div>
       </div>
     </div>
@@ -74,6 +75,13 @@
       "label": "t:sections.section_kazaryan.settings.section_description.label",
       "info": "t:sections.section_kazaryan.settings.section_description.info",
       "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor. Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
+    },
+    {
+      "id": "person_positions",
+      "type": "text",
+      "label": "t:sections.section_kazaryan.settings.person_positions.label",
+      "info": "t:sections.section_kazaryan.settings.person_positions.info",
+      "default": "The Founders of Handmade Studio"
     }
   ]
 }

@@ -5,18 +5,6 @@
  @return calc(math.div($value, calc(16 - (16 * 37.5 / 100)))) + rem;
 }
 
-:root {
- --section-kazaryan__fix--max-width: #{toRem(1296)};
- // -
- --about-container--padding-top: #{toRem(264)};
- --about-container--padding-bottom: #{toRem(182)};
- // -
- --about-container--left-spacer--padding-left: #{toRem(432)};
- // -
- --about-container__img--margin-top: #{toRem(12)};
- --about-container__img--margin-left: #{toRem(52)};
-}
-
 @mixin reset-default() {
  list-style: none;
  padding: 0;
@@ -80,22 +68,22 @@
    left: -100%;
    transform: translate(50%, 0);
    img {
-    margin-top: var(--about-container__img--margin-top);
-    margin-left: var(--about-container__img--margin-left);
+    margin-top: var(--about-container--left-spacer__img--margin-top);
+    margin-left: var(--about-container--left-spacer__img--margin-left);
    }
   }
  }
 
  // .about-container--right-spacer
  &--right-spacer {
-  padding-right: 432px;
+  padding-right: var(--about-container--right-spacer--padding-right);
 
   #{$this}__img-position {
    left: 100%;
    transform: translate(50%, 0);
    img {
-    margin-top: 12px;
-    margin-left: -28px;
+    margin-top: var(--about-container--right-spacer__img--margin-top);
+    margin-left: var(--about-container--right-spacer__img--margin-left);
    }
   }
  }
@@ -106,16 +94,11 @@
  @include reset-default;
  font-family: "Playfair Display", serif;
  font-weight: 400;
- font-size: 65px;
- line-height: 67.14px;
  color: #56443e;
- letter-spacing: -2.54px;
- padding-left: 5px;
- em {
-  margin-left: -5px;
-  display: inline-block;
-  padding-right: 8px;
- }
+ font-size: var(--section-headline--font-size);
+ line-height: var(--section-headline--line-height);
+ letter-spacing: var(--section-headline--letter-spacing);
+ padding-left: var(--section-headline--padding-left);
 }
 
 // .section-context
@@ -123,30 +106,30 @@
  @include reset-default;
  font-family: "Poppins", sans-serif;
  font-style: normal;
- font-weight: 400;
- font-size: 14px;
- line-height: 23.66px;
- letter-spacing: -0.02px;
  color: #000;
+ font-weight: 400;
  opacity: 0.6;
- word-spacing: -2.8px;
+ font-size: var(--section-context--font-size);
+ line-height: var(--section-context--line-height);
+ letter-spacing: var(--section-context--letter-spacing);
+ word-spacing: var(--section-context--word-spacing);
 
  // .section-context--caption
  &--caption {
   text-decoration: none;
-  padding-top: 54px;
-  padding-bottom: 52px;
-  padding-left: 5px;
-  padding-right: 40px;
+  padding-top: var(--section-context--caption--padding-top);
+  padding-right: var(--section-context--caption--padding-right);
+  padding-bottom: var(--section-context--caption--padding-bottom);
+  padding-left: var(--section-context--caption--padding-left);
  }
 
  // .section-context--two-cols
  &--two-cols {
   column-count: 2;
-  column-gap: 21px;
-  padding-top: 25px;
-  padding-left: 5px;
-  padding-right: 20px;
+  column-gap: var(--section-context--two-cols--column-gap);
+  padding-top: var(--section-context--two-cols--padding-top);
+  padding-left: var(--section-context--two-cols--padding-left);
+  padding-right: var(--section-context--two-cols--padding-right);
  }
 }
 
@@ -164,48 +147,52 @@
 // .list-persons
 .list-persons {
  display: flex;
- padding-top: 82px;
+ padding-top: var(--list-persons--padding-top);
 
  // .list-persons__images
  &__images {
-  padding-left: 23px;
-  padding-right: 30px;
   display: flex;
   font-size: 0;
+  padding-left: var(--list-persons__images--padding-left);
+  padding-right: var(--list-persons__images--padding-right);
  }
 
- // .list-persons__full-names
  &__full-names {
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 23.66px;
   color: #000;
-  letter-spacing: -0.31px;
+  font-weight: 400;
+  font-size: var(--list-persons__full-names--font-size);
+  line-height: var(--list-persons__full-names--line-height);
+  letter-spacing: var(--list-persons__full-names--letter-spacing);
  }
 }
 
 // .person-img
 .person-img {
  display: block;
- width: 43px;
- height: 43px;
+ border-radius: 50%;
  border: 3px solid #fff;
  background: #ccc;
- border-radius: 50%;
- margin-left: -18px;
  position: relative;
  top: 0;
  left: 0;
+ width: var(--person-img--width);
+ height: var(--person-img--height);
+ margin-left: var(--person-img--margin-left);
  &:hover {
   z-index: 100;
  }
 }
 
+/*
+
+
+*/
+
 // .person-full-name
 .person-full-name {
  display: inline-block;
- padding-right: 8px;
+ padding-right: var(--person-full-name--padding-right);
 }
 
 // .person-positions

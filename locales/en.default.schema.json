@@ -455,18 +455,23 @@
     },
 
     "section_headline": {
-     "label": "Section Headline",
-     "info": "You can edit section headline"
+     "label": "Field headline",
+     "info": "You can edit field headline"
     },
 
     "section_caption": {
-     "label": "Section Caption",
-     "info": "You can edit section caption"
+     "label": "Field caption",
+     "info": "You can edit field caption"
     },
 
     "section_description": {
-     "label": "Section Description",
-     "info": "You can edit section description"
+     "label": "Field description",
+     "info": "You can edit field description"
+    },
+
+    "person_positions": {
+     "label": "Field positions",
+     "info": "You can edit field description"
     }
    }
   },
