@@ -90,8 +90,8 @@
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when 'element_person' -%}
-                {% if block.settings.element_person_img.src != blank %}
-                  <span class="person-img" {{ block.shopify_attributes }}>
+                <span class="person-img" {{ block.shopify_attributes }}>
+                  {% if block.settings.element_person_img.src != blank %}
                     <img
                       src="{{ block.settings.element_person_img | image_url: width: 43, height: 43 }}"
                       alt="{{ block.settings.element_person_img.alt }}"
@@ -99,12 +99,10 @@
                       height="43"
                       loading="lazy"
                     >
-                  </span>
-                {% elsif block.settings.element_person_img.src != blank %}
-                  <span class="person-img">
+                  {% elsif block.settings.element_person_img.src != blank %}
                     {{ 'collection-1' | placeholder_svg_tag }}
-                  </span>
-                {% endif %}
+                  {% endif %}
+                </span>
             {%- endcase -%}
           {%- endfor -%}
         </div>
