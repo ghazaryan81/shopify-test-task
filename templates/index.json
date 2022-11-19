@@ -7,9 +7,13 @@
     "section_headline": {
      "type": "section_headline",
      "settings": {}
+    },
+    "section_caption": {
+     "type": "section_caption",
+     "settings": {}
     }
    },
-   "block_order": ["section_headline"]
+   "block_order": ["section_headline", "section_caption"]
   },
   "image_banner": {
    "type": "image-banner",

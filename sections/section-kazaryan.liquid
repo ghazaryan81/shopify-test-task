@@ -49,7 +49,19 @@
               {{- block.settings.section_headline_txt -}}
             </h2>
           {%- when 'section_caption' -%}
-            <div>1111</div>
+            {%- style -%}
+              {{ block.settings.section_caption_font_family | font_face }}
+            {%- endstyle -%}
+            <div
+              class="section-context section-context--caption"
+              {{ block.shopify_attributes }}
+              style="
+                font-family: '{{ block.settings.section_caption_font_family.family }}', {{ block.settings.section_caption_font_family.fallback_families }};
+                font-weight: '{{ block.settings.section_caption_font_family.weight }}'
+              "
+            >
+              {{ section.settings.section_caption_txt }}
+            </div>
         {%- endcase -%}
       {%- endfor -%}
 
