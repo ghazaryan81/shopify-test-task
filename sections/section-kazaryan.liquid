@@ -1,12 +1,5 @@
 {{ 'section-kazaryan.css' | asset_url | stylesheet_tag }}
 
-{%- comment -%}
-   {%- style -%}
-    {{ section.settings.section_headline_font_family | font_face }}
-    {{ section.settings.section_text_font_family | font_face }}
-  {%- endstyle -%}
-{%- endcomment -%}
-
 <div
   class="section-kazaryan"
   style="font-family: '{{ section.settings.section_text_font_family.family }}'; font-weight:{{ section.settings.section_text_font_family.weight }} "
