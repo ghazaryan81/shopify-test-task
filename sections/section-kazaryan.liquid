@@ -48,14 +48,22 @@
             >
               {{- block.settings.section_headline_txt -}}
             </h2>
+          {%- when 'section_caption' -%}
+            {%- style -%}
+              {{ block.settings.section_caption_font_family | font_face }}
+            {%- endstyle -%}
+            <div
+              class="section-context section-context--caption"
+              {{ block.shopify_attributes }}
+              style="
+                font-family: '{{ block.settings.section_caption_font_family.family }}', {{ block.settings.section_caption_font_family.fallback_families }};
+                font-weight: '{{ block.settings.section_caption_font_family.weight }}'
+              "
+            >
+              {{ section.settings.section_caption_txt }}
+            </div>
         {%- endcase -%}
       {%- endfor -%}
-
-      {%- comment -%}
-         <div class="section-context section-context--caption">
-          {{ section.settings.section_caption }}
-        </div>
-      {%- endcomment -%}
 
       <i class="horizontal-divider">&nbsp;</i>
 
@@ -111,7 +119,28 @@
           "type": "font_picker",
           "label": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.label",
           "info": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.info",
-          "default": "playfair_display_n7"
+          "default": "playfair_display_n4"
+        }
+      ]
+    },
+    {
+      "type": "section_caption",
+      "name": "Section Caption",
+      "limit": 1,
+      "settings": [
+        {
+          "id": "section_caption_txt",
+          "type": "richtext",
+          "label": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_txt.label",
+          "info": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_txt.info",
+          "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
+        },
+        {
+          "id": "section_caption_font_family",
+          "type": "font_picker",
+          "label": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.label",
+          "info": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.info",
+          "default": "poppins_n4"
         }
       ]
     }

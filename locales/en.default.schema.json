@@ -445,6 +445,19 @@
        "info": "You can change font family section headline"
       }
      }
+    },
+    "section_caption": {
+     "name": "Section Caption",
+     "settings": {
+      "section_caption_txt": {
+       "label": "Edit Text Section Caption",
+       "info": "You can edit text section caption"
+      },
+      "section_caption_font_family": {
+       "label": "Change Font Family Section Caption",
+       "info": "You can change font family section caption"
+      }
+     }
     }
    }
   },
