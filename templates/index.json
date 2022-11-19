@@ -11,6 +11,10 @@
     "section_caption": {
      "type": "section_caption",
      "settings": {}
+    },
+    "section_description": {
+     "type": "section_description",
+     "settings": {}
     }
    },
    "block_order": ["section_headline", "section_caption"]
