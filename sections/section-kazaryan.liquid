@@ -34,21 +34,6 @@
 
       {%- for block in section.blocks -%}
         {%- case block.type -%}
-          {%- when 'section_caption' -%}
-            111111111
-            {%- style -%}
-              {{ block.settings.section_headline_font_family | font_face }}
-            {%- endstyle -%}
-            <h2
-              class="section-headline"
-              {{ block.shopify_attributes }}
-              style="
-                font-family: '{{ block.settings.section_headline_font_family.family }}', {{ block.settings.section_headline_font_family.fallback_families }};
-                font-weight: '{{ block.settings.section_headline_font_family.weight }}'
-              "
-            >
-              {{- block.settings.section_headline_txt -}}
-            </h2>
           {%- when 'section_headline' -%}
             {%- style -%}
               {{ block.settings.section_headline_font_family | font_face }}
@@ -78,6 +63,7 @@
               {{- block.settings.section_caption_txt -}}
             </div>
           {%- when 'section_description' -%}
+            DDDDDDDDDDDDDDDD
             {%- style -%}
               {{ block.settings.section_description_font_family | font_face }}
             {%- endstyle -%}
@@ -179,7 +165,7 @@
           "type": "richtext",
           "label": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_txt.label",
           "info": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_txt.info",
-          "default": "<p>Non-disclosure agreement scrum project</p>"
+          "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
         },
         {
           "id": "section_description_font_family",
