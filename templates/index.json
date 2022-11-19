@@ -18,13 +18,18 @@
     "section_description": {
      "type": "section_description",
      "settings": {}
+    },
+    "section_person_position": {
+     "type": "section_person_position",
+     "settings": {}
     }
    },
    "block_order": [
     "section_image",
     "section_headline",
     "section_caption",
-    "section_description"
+    "section_description",
+    "section_person_position"
    ],
    "settings": {}
   },

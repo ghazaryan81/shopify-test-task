@@ -487,6 +487,16 @@
        "info": "You can change font family section description"
       }
      }
+    },
+
+    "section_person_position": {
+     "name": "Person Position",
+     "settings": {
+      "section_person_position": {
+       "label": "Edit Text Person Position",
+       "info": "You can edit text person position"
+      }
+     }
     }
    }
   },

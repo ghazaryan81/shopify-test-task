@@ -1,9 +1,6 @@
 {{ 'section-kazaryan.css' | asset_url | stylesheet_tag }}
 
-<div
-  class="section-kazaryan"
-  style="font-family: '{{ section.settings.section_text_font_family.family }}'; font-weight:{{ section.settings.section_text_font_family.weight }} "
->
+<div class="section-kazaryan section-kazaryan----font-family">
   <div class="section-kazaryan__fix">
     <div class="
         about-container
@@ -90,9 +87,30 @@
 
       <div class="list-persons">
         <div class="list-persons__images">
-          <span class="person-img">&nbsp;</span>
-          <span class="person-img">&nbsp;</span>
-          <span class="person-img">&nbsp;</span>
+          <span class="person-img">
+            <img
+              src="https://hikekazarian.ru/portfolio/ashstone-studios-test-task/assets/img/1.jpg"
+              alt=""
+              width="43"
+              height="43"
+            >
+          </span>
+          <span class="person-img">
+            <img
+              src="https://hikekazarian.ru/portfolio/ashstone-studios-test-task/assets/img/2.jpg"
+              alt=""
+              width="43"
+              height="43"
+            >
+          </span>
+          <span class="person-img">
+            <img
+              src="https://hikekazarian.ru/portfolio/ashstone-studios-test-task/assets/img/3.jpg"
+              alt=""
+              width="43"
+              height="43"
+            >
+          </span>
         </div>
         <div class="list-persons__full-names">
           <div class="flex-box left-shift">
@@ -101,11 +119,15 @@
             <span class="person-full-name">and</span>
             <span class="person-full-name">Tanya Caldwell</span>
           </div>
-          {%- comment -%}
-             <div class="person-positions" {{ block.shopify_attributes }}>
-              {{ section.settings.person_positions }}
-            </div>
-          {%- endcomment -%}
+
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'section_person_position' -%}
+                <div class="person-positions" {{ block.shopify_attributes }}>
+                  {{- block.settings.section_person_position_txt -}}
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
         </div>
       </div>
     </div>
@@ -205,6 +227,19 @@
             "label": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_font_family.label",
             "info": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_font_family.info",
             "default": "poppins_n4"
+          }
+        ]
+      },
+      {
+        "type": "section_person_position",
+        "name": "t:sections.section_kazaryan.blocks.section_person_position.name",
+        "settings": [
+          {
+            "id": "section_person_position_txt",
+            "type": "text",
+            "label": "t:sections.section_kazaryan.blocks.section_person_position.settings.label",
+            "info": "t:sections.section_kazaryan.blocks.section_person_position.settings.info",
+            "default": "The Founders of Handmade Studio"
           }
         ]
       }
