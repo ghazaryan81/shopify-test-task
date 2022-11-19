@@ -87,23 +87,44 @@
 
       <div class="list-persons">
         <div class="list-persons__images">
-          <span class="person-img">
-            <img
-              src="https://hikekazarian.ru/portfolio/ashstone-studios-test-task/assets/img/1.jpg"
-              alt=""
-              width="43"
-              height="43"
-            >
-          </span>
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'element_person' -%}
+                {% if block.settings.element_person_img.src != blank %}
+                  <span class="person-img" {{ block.shopify_attributes }}>
+                    <img
+                      src="{{ block.settings.element_person_img | image_url: width: 43, height: 43 }}"
+                      alt="{{ block.settings.element_person_img.alt }}"
+                      width="43"
+                      height="43"
+                      loading="lazy"
+                    >
+                  </span>
+                {% elsif block.settings.element_person_img.src != blank %}
+                  <span class="person-img">
+                    {{ 'collection-1' | placeholder_svg_tag }}
+                  </span>
+                {% endif %}
+            {%- endcase -%}
+          {%- endfor -%}
         </div>
         <div class="list-persons__full-names">
-          <div class="flex-box left-shift"><span class="person-full-name">Clara Williams</span>,</div>
+          <div class="flex-box left-shift">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'element_person' -%}
+                  <span class="person-full-name" {{ block.shopify_attributes }}>
+                    {{ block.settings.element_person_title }}
+                  </span>
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>
 
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when 'section_person_position' -%}
                 <div class="person-positions" {{ block.shopify_attributes }}>
-                  {{- block.settings.section_person_position_txt -}}
+                  {{ block.settings.section_person_position_txt }}
                 </div>
             {%- endcase -%}
           {%- endfor -%}
@@ -219,6 +240,25 @@
             "label": "t:sections.section_kazaryan.blocks.section_person_position.settings.section_person_position.label",
             "info": "t:sections.section_kazaryan.blocks.section_person_position.settings.section_person_position.info",
             "default": "The Founders of Handmade Studio"
+          }
+        ]
+      },
+      {
+        "type": "element_person",
+        "name": "t:sections.section_kazaryan.blocks.element_person.name",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "element_person_img",
+            "label": "t:sections.section_kazaryan.blocks.element_person.settings.img.label",
+            "info": "t:sections.section_kazaryan.blocks.element_person.settings.img.label"
+          },
+          {
+            "type": "text",
+            "id": "element_person_title",
+            "label": "t:sections.section_kazaryan.blocks.element_person.settings.text.label",
+            "info": "t:sections.section_kazaryan.blocks.element_person.settings.text.label",
+            "default": "Clara Williams"
           }
         ]
       }
