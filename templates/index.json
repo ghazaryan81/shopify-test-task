@@ -2,44 +2,14 @@
  "sections": {
   "section_kazaryan": {
    "type": "section-kazaryan",
-
+   "settings": {},
    "blocks": {
-    "title": {
-     "type": "title",
-     "settings": {}
-    },
-    "price": {
-     "type": "price",
-     "settings": {}
-    },
-    "vendor": {
-     "type": "vendor",
-     "settings": {}
-    },
-    "description": {
-     "type": "description",
+    "section_headline": {
+     "type": "section_headline",
      "settings": {}
     }
    },
-   "block_order": ["title", "price", "description", "vendor"],
-
-   "settings": {
-    "castling_segments": false,
-    "img": "https://hikekazarian.ru/portfolio/ashstone-studios-test-task/assets/img/img-1x.jpg",
-    "section_headline": "<p>Hi, we are<br/>Handmade Studio</p>",
-    "section_caption": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>",
-    "section_description": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor. Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>",
-    "person_positions": "The Founders of Handmade Studio",
-    "section_headline_font": "playfair_display_n7"
-   }
-  },
-  "ash_about": {
-   "type": "ash-about",
-   "settings": {
-    "headline": "<p><em>Hi</em>, we are Handmade Studio</p>",
-    "caption": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel<br/>investor focus research & development value proposition graphical user interface investor.</p>",
-    "description": "<p>Marketing nona sd asd asd-disclosure agreement scrum project alpha lean startup startup business plan user experience ang<a href=\"/pages/contact\" target=\"_blank\" title=\"Contact\"><em>el investor focus research & development value proposition gra</em></a>phical user interface investor. Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
-   }
+   "block_order": ["section_headline"]
   },
   "image_banner": {
    "type": "image-banner",
@@ -238,7 +208,6 @@
  },
  "order": [
   "section_kazaryan",
-  "ash_about",
   "image_banner",
   "rich_text",
   "featured_collection",

@@ -428,23 +428,6 @@
     }
    }
   },
-  "ash_about": {
-   "name": "About section",
-   "settings": {
-    "headline": {
-     "label": "Headline",
-     "info": "Edit headline context"
-    },
-    "caption": {
-     "label": "Caption",
-     "info": "Edit caption context"
-    },
-    "description": {
-     "label": "Description",
-     "info": "Edit description context"
-    }
-   }
-  },
 
   "section_kazaryan": {
    "name": "About section",
@@ -453,27 +436,22 @@
      "label": "Castling segments",
      "info": "Castling segments places"
     },
-
     "img": {
      "label": "Img URL",
      "info": "Add new img url for change"
     },
-
     "section_headline": {
      "label": "Field headline",
      "info": "You can edit field headline"
     },
-
     "section_caption": {
      "label": "Field caption",
      "info": "You can edit field caption"
     },
-
     "section_description": {
      "label": "Field description",
      "info": "You can edit field description"
     },
-
     "section_headline_font_family": {
      "label": "Field headline font family",
      "info": "You can edit headline font family"
@@ -486,7 +464,6 @@
      "label": "Field positions",
      "info": "You can edit field description"
     },
-
     "section_image": {
      "label": "Section image",
      "info": "You can edit section image"

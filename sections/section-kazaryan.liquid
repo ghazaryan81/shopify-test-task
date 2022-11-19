@@ -1,98 +1,78 @@
 {{ 'section-kazaryan.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
-  {{ section.settings.section_headline_font_family | font_face }}
-  {{ section.settings.section_text_font_family | font_face }}
-{%- endstyle -%}
+{%- comment -%}
+   {%- style -%}
+    {{ section.settings.section_headline_font_family | font_face }}
+    {{ section.settings.section_text_font_family | font_face }}
+  {%- endstyle -%}
+{%- endcomment -%}
 
 <div
   class="section-kazaryan"
   style="font-family: '{{ section.settings.section_text_font_family.family }}'; font-weight:{{ section.settings.section_text_font_family.weight }} "
 >
   <div class="section-kazaryan__fix">
-    <div class="about-container {% if section.settings.castling_segments == false %}about-container--left-spacer{% elsif section.settings.castling_segments == true %}about-container--right-spacer{% endif %}">
+    <div class="about-container about-container--right-spacer">
+      {%- comment -%} <div class="about-container {% if section.settings.castling_segments == false %}about-container--left-spacer{% elsif section.settings.castling_segments == true %}about-container--right-spacer{% endif %}"> {%- endcomment -%}
       <div class="about-container__img-cell">
-        <div class="about-container__img-position">
-          {% if section.settings.section_image.src != blank %}
-            <img
-              src="{{ section.settings.section_image | image_url: width: 306, height: 376 }}"
-              alt="{{ section.settings.section_image.alt }}"
-              width="306"
-              height="376"
-              loading="lazy"
-            >
-          {% elsif section.settings.section_image.src == blank %}
-            {{ 'collection-1' | placeholder_svg_tag }}
-          {% endif %}
+        {%- comment -%}
+           <div class="about-container__img-position">
+            {% if section.settings.section_image.src != blank %}
+              <img
+                src="{{ section.settings.section_image | image_url: width: 306, height: 376 }}"
+                alt="{{ section.settings.section_image.alt }}"
+                width="306"
+                height="376"
+                loading="lazy"
+              >
+            {% elsif section.settings.section_image.src == blank %}
+              {{ 'collection-1' | placeholder_svg_tag }}
+            {% endif %}
+          </div>
+        {%- endcomment -%}
+      </div>
+
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'section_headline' -%}
+            <h2 class="section-headline">
+              {{- block.settings.section_headline_txt -}}
+            </h2>
+        {%- endcase -%}
+      {%- endfor -%}
+
+      {%- comment -%}
+         <div class="section-context section-context--caption">
+          {{ section.settings.section_caption }}
         </div>
-      </div>
-
-      <div style="font-size:20px">
-        {% for block in section.blocks %}
-          {% case block.type %}
-            {% when 'title' %}
-              <h2 {{ block.shopify_attributes }}>h2 - {{ block.settings.title_title }}</h2>
-            {% when 'price' %}
-              <p {{ block.shopify_attributes }}>price - {{ block.settings.price_price }}</p>
-            {% when 'vendor' %}
-              <p {{ block.shopify_attributes }}>vendor - {{ block.settings.vendor_vendor }}</p>
-            {% when 'description' %}
-              <p {{ block.shopify_attributes }}>descr - {{ block.settings.description_description }}</p>
-          {% endcase %}
-        {% endfor %}
-      </div>
-
-      <h2
-        class="section-headline"
-        style="font-family: '{{ section.settings.section_headline_font_family.family }}'"
-        {{ block.shopify_attributes }}
-      >
-        {{ section.settings.section_headline }}
-      </h2>
-
-      <div class="section-context section-context--caption" {{ block.shopify_attributes }}>
-        {{ section.settings.section_caption }}
-      </div>
+      {%- endcomment -%}
 
       <i class="horizontal-divider">&nbsp;</i>
 
-      <div class="section-context section-context--two-cols" {{ block.shopify_attributes }}>
-        {{ section.settings.section_description }}
-      </div>
+      {%- comment -%}
+         <div class="section-context section-context--two-cols">
+          {{ section.settings.section_description }}
+        </div>
+      {%- endcomment -%}
 
       <div class="list-persons">
         <div class="list-persons__images">
-          <span class="person-img">&nbsp;</span>
-          {%- comment -%}
-             {%- for block in section.blocks -%}
-              {%- case block.type -%}
-                {%- when 'text' -%}
-              {%- endcase -%}
-            {%- endfor -%}
-          {%- endcomment -%}
-
           <span class="person-img">&nbsp;</span>
           <span class="person-img">&nbsp;</span>
           <span class="person-img">&nbsp;</span>
         </div>
         <div class="list-persons__full-names">
           <div class="flex-box left-shift">
-            {%- comment -%}
-               {%- for block in section.blocks -%}
-                {%- case block.type -%}
-                  {%- when 'text' -%}
-                    <span class="person-full-name">Clara Williams</span>,
-                {%- endcase -%}
-              {%- endfor -%}
-            {%- endcomment -%}
-
+            <span class="person-full-name">Clara Williams</span>,
             <span class="person-full-name">Joyce Harper</span>
             <span class="person-full-name">and</span>
             <span class="person-full-name">Tanya Caldwell</span>
           </div>
-          <div class="person-positions" {{ block.shopify_attributes }}>
-            {{ section.settings.person_positions }}
-          </div>
+          {%- comment -%}
+             <div class="person-positions" {{ block.shopify_attributes }}>
+              {{ section.settings.person_positions }}
+            </div>
+          {%- endcomment -%}
         </div>
       </div>
     </div>
@@ -105,134 +85,23 @@
   "tag": "section",
   "blocks": [
     {
-      "type": "title",
-      "name": "title",
-      "limit": 3,
+      "type": "section_headline",
+      "name": "Section Headline",
+      "limit": 1,
       "settings": [
         {
-          "type": "text",
-          "id": "title_title",
-          "label": "title_title",
-          "info": "title_title",
-          "default": "title_title"
-        }
-      ]
-    },
-    {
-      "type": "price",
-      "name": "price",
-      "limit": 3,
-      "settings": [
-        {
-          "type": "text",
-          "id": "price_price",
-          "label": "price_price",
-          "info": "price_price",
-          "default": "price_price"
-        }
-      ]
-    },
-    {
-      "type": "vendor",
-      "name": "vendor",
-      "limit": 3,
-      "settings": [
-        {
-          "type": "text",
-          "id": "vendor_vendor",
-          "label": "vendor_vendor",
-          "info": "vendor_vendor",
-          "default": "vendor_vendor"
-        }
-      ]
-    },
-    {
-      "type": "description",
-      "name": "description",
-      "limit": 3,
-      "settings": [
-        {
-          "id": "description_description",
-          "type": "text",
-          "label": "description_description",
-          "info": "description_description",
-          "default": "description_description"
-        }
-      ]
-    }
-  ],
-  "settings": [
-    {
-      "id": "castling_segments",
-      "type": "checkbox",
-      "label": "t:sections.section_kazaryan.settings.castling_segments.label",
-      "info": "t:sections.section_kazaryan.settings.castling_segments.info",
-      "default": false
-    },
-    {
-      "id": "section_headline",
-      "type": "richtext",
-      "label": "t:sections.section_kazaryan.settings.section_headline.label",
-      "info": "t:sections.section_kazaryan.settings.section_headline.info",
-      "default": "<p>Hi, we are<br>Handmade Studio</p>"
-    },
-    {
-      "id": "section_caption",
-      "type": "richtext",
-      "label": "t:sections.section_kazaryan.settings.section_caption.label",
-      "info": "t:sections.section_kazaryan.settings.section_caption.info",
-      "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
-    },
-    {
-      "id": "section_description",
-      "type": "richtext",
-      "label": "t:sections.section_kazaryan.settings.section_description.label",
-      "info": "t:sections.section_kazaryan.settings.section_description.info",
-      "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor. Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
-    },
-    {
-      "id": "person_positions",
-      "type": "text",
-      "label": "t:sections.section_kazaryan.settings.person_positions.label",
-      "info": "t:sections.section_kazaryan.settings.person_positions.info",
-      "default": "The Founders of Handmade Studio"
-    },
-    {
-      "type": "font_picker",
-      "id": "section_headline_font_family",
-      "label": "t:sections.section_kazaryan.settings.section_headline_font_family.label",
-      "info": "t:sections.section_kazaryan.settings.section_headline_font_family.info",
-      "default": "playfair_display_n7"
-    },
-    {
-      "type": "font_picker",
-      "id": "section_text_font_family",
-      "label": "t:sections.section_kazaryan.settings.section_text_font_family.label",
-      "info": "t:sections.section_kazaryan.settings.section_text_font_family.info",
-      "default": "poppins_n4"
-    },
-    {
-      "type": "image_picker",
-      "id": "section_image",
-      "label": "t:sections.section_kazaryan.settings.section_image.label",
-      "info": "t:sections.section_kazaryan.settings.section_image.info"
-    }
-  ],
-  "presets": [
-    {
-      "name": "PPPPPP",
-      "blocks": [
-        {
-          "type": "title"
+          "id": "section_headline_txt",
+          "type": "richtext",
+          "label": "t:sections.section_kazaryan.settings.section_headline.label",
+          "info": "t:sections.section_kazaryan.settings.section_headline.info",
+          "default": "<p>Hi, we are<br>Handmade Studio</p>"
         },
         {
-          "type": "price"
-        },
-        {
-          "type": "vendor"
-        },
-        {
-          "type": "description"
+          "id": "section_headline_font_family",
+          "type": "font_picker",
+          "label": "t:sections.section_kazaryan.settings.section_headline_font_family.label",
+          "info": "t:sections.section_kazaryan.settings.section_headline_font_family.info",
+          "default": "playfair_display_n7"
         }
       ]
     }

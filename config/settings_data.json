@@ -162,15 +162,6 @@
   "horizontal-divider--border-bottom": "rgba(0, 0, 0, 0.2)",
   "person-positions--color": "rgba(0, 0, 0, 0.6)",
   "section-context--color": "rgba(0, 0, 0, 0.6)",
-  "ash_headline_font_family": "playfair_display_n7",
-  "ash_headline_color": "#56443e",
-  "ash_headline_font_size": 65,
-  "ash_headline_line_height": 67.14,
-  "ash_description_font_family": "poppins_n4",
-  "ash_description_font_size": 14,
-  "ash_description_line_height": 23.66,
-  "ash_description_color": "#000000",
-  "ash_description_letter_spacing": -0.2,
   "sections": {
    "announcement-bar": {
     "type": "announcement-bar",
@@ -261,15 +252,6 @@
  },
  "presets": {
   "Default": {
-   "ash_headline_font_family": "playfair_display_n7",
-   "ash_headline_color": "#56443e",
-   "ash_headline_font_size": 65,
-   "ash_headline_line_height": 67.14,
-   "ash_description_font_family": "poppins_n4",
-   "ash_description_font_size": 14,
-   "ash_description_line_height": 23.66,
-   "ash_description_color": "#000000",
-   "ash_description_letter_spacing": -0.2,
    "colors_solid_button_labels": "#ffffff",
    "colors_accent_1": "#121212",
    "gradient_accent_1": "",
