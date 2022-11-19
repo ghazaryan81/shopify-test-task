@@ -49,26 +49,7 @@
               {{- block.settings.section_headline_txt -}}
             </h2>
           {%- when 'section_caption' -%}
-            <div class="section-context section-context--caption">
-              <p>
-                KUKU Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user
-                experience angel investor focus research & development value proposition graphical user interface
-                investor.
-              </p>
-            </div>
-            {%- style -%}
-              {{ block.settings.section_caption_font_family | font_face }}
-            {%- endstyle -%}
-            <div
-              class="section-context section-context--caption"
-              {{ block.shopify_attributes }}
-              style="
-                font-family: '{{ block.settings.section_caption_font_family.family }}', {{ block.settings.section_caption_font_family.fallback_families }};
-                font-weight: '{{ block.settings.section_caption_font_family.weight }}'
-              "
-            >
-              {{ section.settings.section_caption_txt }}
-            </div>
+            <div>1111</div>
         {%- endcase -%}
       {%- endfor -%}
 
@@ -131,7 +112,7 @@
     },
     {
       "type": "section_caption",
-      "name": "Section Caption",
+      "name": "Section caption",
       "settings": [
         {
           "id": "section_caption_txt",
