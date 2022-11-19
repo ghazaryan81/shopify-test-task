@@ -35,7 +35,14 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'section_headline' -%}
-            <h2 class="section-headline" {{ block.shopify_attributes }}>
+            {%- style -%}
+              {{ block.settings.section_headline_font_family | font_face }}
+            {%- endstyle -%}
+            <h2
+              class="section-headline"
+              {{ block.shopify_attributes }}
+              style="font-family: '{{ block.settings.section_headline_font_family.family }}'"
+            >
               {{- block.settings.section_headline_txt -}}
             </h2>
         {%- endcase -%}
