@@ -6,6 +6,7 @@
         "section_image": {
           "type": "section_image",
           "settings": {
+            "section_image": "shopify:\/\/shop_images\/img-1x.jpg"
           }
         },
         "section_headline": {
