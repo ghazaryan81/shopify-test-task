@@ -17,7 +17,7 @@
      "settings": {}
     }
    },
-   "block_order": ["section_headline", "section_caption"]
+   "block_order": ["section_headline", "section_caption", "section_description"]
   },
   "image_banner": {
    "type": "image-banner",
