@@ -34,7 +34,7 @@
 
       {%- for block in section.blocks -%}
         {%- case block.type -%}
-          {%- when 'section_headline' -%}
+          {%- when 'section_caption' -%}
             {%- style -%}
               {{ block.settings.section_headline_font_family | font_face }}
             {%- endstyle -%}
