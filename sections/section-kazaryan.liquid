@@ -5,24 +5,12 @@
   style="font-family: '{{ section.settings.section_text_font_family.family }}'; font-weight:{{ section.settings.section_text_font_family.weight }} "
 >
   <div class="section-kazaryan__fix">
-    <div class="about-container about-container--right-spacer">
-      {%- comment -%} <div class="about-container {% if section.settings.castling_segments == false %}about-container--left-spacer{% elsif section.settings.castling_segments == true %}about-container--right-spacer{% endif %}"> {%- endcomment -%}
+    <div class="
+        about-container
+        about-container--{% if section.settings.section_castling == "left" %}left-spacer{% elsif section.settings.section_castling == "right"  %}right-spacer{% endif %}
+      ">
       <div class="about-container__img-cell">
-        {%- comment -%}
-           <div class="about-container__img-position">
-            {% if section.settings.section_image.src != blank %}
-              <img
-                src="{{ section.settings.section_image | image_url: width: 306, height: 376 }}"
-                alt="{{ section.settings.section_image.alt }}"
-                width="306"
-                height="376"
-                loading="lazy"
-              >
-            {% elsif section.settings.section_image.src == blank %}
-              {{ 'collection-1' | placeholder_svg_tag }}
-            {% endif %}
-          </div>
-        {%- endcomment -%}
+        <div class="about-container__img-position">&nbsp;</div>
       </div>
 
       {%- for block in section.blocks -%}
@@ -101,73 +89,92 @@
       </div>
     </div>
   </div>
-</div>
 
-{% schema %}
-{
-  "name": "t:sections.section_kazaryan.name",
-  "tag": "section",
-  "blocks": [
-    {
-      "type": "section_headline",
-      "name": "Section Headline",
-      "settings": [
-        {
-          "id": "section_headline_txt",
-          "type": "richtext",
-          "label": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_txt.label",
-          "info": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_txt.info",
-          "default": "<p>Hi, we are<br>Handmade Studio</p>"
-        },
-        {
-          "id": "section_headline_font_family",
-          "type": "font_picker",
-          "label": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.label",
-          "info": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.info",
-          "default": "playfair_display_n4"
-        }
-      ]
-    },
-    {
-      "type": "section_caption",
-      "name": "Section Caption",
-      "settings": [
-        {
-          "id": "section_caption_txt",
-          "type": "richtext",
-          "label": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_txt.label",
-          "info": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_txt.info",
-          "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
-        },
-        {
-          "id": "section_caption_font_family",
-          "type": "font_picker",
-          "label": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.label",
-          "info": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.info",
-          "default": "poppins_n4"
-        }
-      ]
-    },
-    {
-      "type": "section_description",
-      "name": "Section Description",
-      "settings": [
-        {
-          "id": "section_description_txt",
-          "type": "richtext",
-          "label": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_txt.label",
-          "info": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_txt.info",
-          "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor. Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
-        },
-        {
-          "id": "section_description_font_family",
-          "type": "font_picker",
-          "label": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_font_family.label",
-          "info": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_font_family.info",
-          "default": "poppins_n4"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
+  {% schema %}
+  {
+    "name": "t:sections.section_kazaryan.name",
+    "tag": "section",
+    "settings": [
+      {
+        "id": "section_castling",
+        "type": "select",
+        "label": "t:sections.section_kazaryan.settings.section_castling.label",
+        "info": "t:sections.section_kazaryan.settings.section_castling.info",
+        "options": [
+          {
+            "value": "left",
+            "label": "t:sections.section_kazaryan.settings.section_castling.options_1"
+          },
+          {
+            "value": "right",
+            "label": "t:sections.section_kazaryan.settings.section_castling.options_2"
+          }
+        ],
+        "default": "left"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "section_headline",
+        "name": "Section Headline",
+        "settings": [
+          {
+            "id": "section_headline_txt",
+            "type": "richtext",
+            "label": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_txt.label",
+            "info": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_txt.info",
+            "default": "<p>Hi, we are<br>Handmade Studio</p>"
+          },
+          {
+            "id": "section_headline_font_family",
+            "type": "font_picker",
+            "label": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.label",
+            "info": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.info",
+            "default": "playfair_display_n4"
+          }
+        ]
+      },
+      {
+        "type": "section_caption",
+        "name": "Section Caption",
+        "settings": [
+          {
+            "id": "section_caption_txt",
+            "type": "richtext",
+            "label": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_txt.label",
+            "info": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_txt.info",
+            "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
+          },
+          {
+            "id": "section_caption_font_family",
+            "type": "font_picker",
+            "label": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.label",
+            "info": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.info",
+            "default": "poppins_n4"
+          }
+        ]
+      },
+      {
+        "type": "section_description",
+        "name": "Section Description",
+        "settings": [
+          {
+            "id": "section_description_txt",
+            "type": "richtext",
+            "label": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_txt.label",
+            "info": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_txt.info",
+            "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor. Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
+          },
+          {
+            "id": "section_description_font_family",
+            "type": "font_picker",
+            "label": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_font_family.label",
+            "info": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_font_family.info",
+            "default": "poppins_n4"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}
+</div>
