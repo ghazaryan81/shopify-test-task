@@ -49,6 +49,13 @@
               {{- block.settings.section_headline_txt -}}
             </h2>
           {%- when 'section_caption' -%}
+            <div class="section-context section-context--caption">
+              <p>
+                KUKU Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user
+                experience angel investor focus research & development value proposition graphical user interface
+                investor.
+              </p>
+            </div>
             {%- style -%}
               {{ block.settings.section_caption_font_family | font_face }}
             {%- endstyle -%}
@@ -64,13 +71,6 @@
             </div>
         {%- endcase -%}
       {%- endfor -%}
-
-      <div class="section-context section-context--caption">
-        <p>
-          Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience
-          angel investor focus research & development value proposition graphical user interface investor.
-        </p>
-      </div>
 
       <i class="horizontal-divider">&nbsp;</i>
 
