@@ -439,6 +439,16 @@
     }
    },
    "blocks": {
+    "section_image": {
+     "name": "Section Image",
+     "settings": {
+      "section_image": {
+       "label": "Change Section Image",
+       "info": "You can change section image"
+      }
+     }
+    },
+
     "section_headline": {
      "name": "Section Headline",
      "settings": {

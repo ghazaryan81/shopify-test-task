@@ -3,6 +3,10 @@
   "section_kazaryan": {
    "type": "section-kazaryan",
    "blocks": {
+    "section_image": {
+     "type": "section_image",
+     "settings": {}
+    },
     "section_headline": {
      "type": "section_headline",
      "settings": {}
@@ -17,6 +21,7 @@
     }
    },
    "block_order": [
+    "section_image",
     "section_headline",
     "section_caption",
     "section_description"
