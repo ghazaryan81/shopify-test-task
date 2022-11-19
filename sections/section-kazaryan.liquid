@@ -15,15 +15,19 @@
             {%- case block.type -%}
               {%- when 'section_image' -%}
                 {% if block.settings.section_image.src != blank %}
-                  <img
-                    src="{{ block.settings.section_image | image_url: width: 306, height: 376 }}"
-                    alt="{{ block.settings.section_image.alt }}"
-                    width="306"
-                    height="376"
-                    loading="lazy"
-                  >
+                  <div class="img-container" {{ block.shopify_attributes }}>
+                    <img
+                      src="{{ block.settings.section_image | image_url: width: 306, height: 376 }}"
+                      alt="{{ block.settings.section_image.alt }}"
+                      width="306"
+                      height="376"
+                      loading="lazy"
+                    >
+                  </div>
                 {% elsif block.settings.section_image.src == blank %}
-                  {{ 'collection-1' | placeholder_svg_tag }}
+                  <div class="img-container" {{ block.shopify_attributes }}>
+                    {{ 'collection-1' | placeholder_svg_tag }}
+                  </div>
                 {% endif %}
             {%- endcase -%}
           {%- endfor -%}
