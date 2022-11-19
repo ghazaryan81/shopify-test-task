@@ -15,7 +15,10 @@
             {%- case block.type -%}
               {%- when 'section_image' -%}
                 {% if block.settings.section_image.src != blank %}
-                  <div class="img-container" {{ block.shopify_attributes }}>
+                  <div
+                    class="img-container"
+                    {{ block.shopify_attributes }}
+                  >
                     <img
                       src="{{ block.settings.section_image | image_url: width: 306, height: 376 }}"
                       alt="{{ block.settings.section_image.alt }}"
@@ -25,7 +28,10 @@
                     >
                   </div>
                 {% elsif block.settings.section_image.src == blank %}
-                  <div class="img-container" {{ block.shopify_attributes }}>
+                  <div
+                    class="img-container"
+                    {{ block.shopify_attributes }}
+                  >
                     {{ 'collection-1' | placeholder_svg_tag }}
                   </div>
                 {% endif %}
