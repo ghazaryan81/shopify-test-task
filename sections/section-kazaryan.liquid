@@ -34,34 +34,22 @@
 
       {%- for block in section.blocks -%}
         {%- case block.type -%}
-          {%- when 'section_headline' -%}
-            {%- style -%}
-              {{ block.settings.section_headline_font_family | font_face }}
-            {%- endstyle -%}
-            <h2
-              class="section-headline"
-              {{ block.shopify_attributes }}
-              style="
-                font-family: '{{ block.settings.section_headline_font_family.family }}', {{ block.settings.section_headline_font_family.fallback_families }};
-                font-weight: '{{ block.settings.section_headline_font_family.weight }}'
-              "
-            >
-              {{- block.settings.section_headline_txt -}}
-            </h2>
-          {%- when 'section_caption' -%}
-            {%- style -%}
-              {{ block.settings.section_caption_font_family | font_face }}
-            {%- endstyle -%}
-            <div
-              class="section-context section-context--caption"
-              {{ block.shopify_attributes }}
-              style="
-                font-family: '{{ block.settings.section_caption_font_family.family }}', {{ block.settings.section_caption_font_family.fallback_families }};
-                font-weight: '{{ block.settings.section_caption_font_family.weight }}'
-              "
-            >
-              {{- block.settings.section_caption_txt -}}
-            </div>
+            {%- comment -%}
+               {%- when 'section_headline' -%}
+              {%- style -%}
+                {{ block.settings.section_headline_font_family | font_face }}
+              {%- endstyle -%}
+              <h2
+                class="section-headline"
+                {{ block.shopify_attributes }}
+                style="
+                  font-family: '{{ block.settings.section_headline_font_family.family }}', {{ block.settings.section_headline_font_family.fallback_families }};
+                  font-weight: '{{ block.settings.section_headline_font_family.weight }}'
+                "
+              >
+                {{- block.settings.section_headline_txt -}}
+              </h2>
+            {%- endcomment -%}
           {%- when 'section_caption' -%}
             {%- style -%}
               {{ block.settings.section_caption_font_family | font_face }}
