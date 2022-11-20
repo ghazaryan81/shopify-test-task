@@ -85,6 +85,10 @@
         {%- endcase -%}
       {%- endfor -%}
 
+      <div style="border:solid #ff0000 1px" {{ block.shopify_attributes }}>
+        {{ section.blocks.section_person_position_txt }}
+      </div>
+
       <div class="list-persons">
         <div class="list-persons__images">
           {%- for block in section.blocks -%}
@@ -106,14 +110,15 @@
             {%- endcase -%}
           {%- endfor -%}
         </div>
+
         <div class="list-persons__full-names">
           <div class="flex-box left-shift">
             {%- for block in section.blocks -%}
               {%- case block.type -%}
                 {%- when 'element_person' -%}
-                  <span class="person-full-name" {{ block.shopify_attributes }}>
+                  <div class="person-full-name" {{ block.shopify_attributes }}>
                     {{ block.settings.element_person_title }}
-                  </span>
+                  </div>
               {%- endcase -%}
             {%- endfor -%}
           </div>
@@ -122,7 +127,7 @@
             {%- case block.type -%}
               {%- when 'section_person_position' -%}
                 <div class="person-positions" {{ block.shopify_attributes }}>
-                  {{ block.settings.section_person_position_txt }}
+                  {{ block.settings.section_person_position_txt }},
                 </div>
             {%- endcase -%}
           {%- endfor -%}
