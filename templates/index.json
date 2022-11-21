@@ -55,6 +55,13 @@
             "element_person_img": "shopify:\/\/shop_images\/3.jpg",
             "element_person_title": "Tanya Caldwell"
           }
+        },
+        "1c2f26e8-0f2f-4d95-b2fc-4a398a9ca87a": {
+          "type": "element_person",
+          "settings": {
+            "element_person_img": "shopify:\/\/shop_images\/3.jpg",
+            "element_person_title": "ыыыы"
+          }
         }
       },
       "block_order": [
@@ -65,7 +72,8 @@
         "section_person_position",
         "element_person2",
         "element_person1",
-        "element_person3"
+        "element_person3",
+        "1c2f26e8-0f2f-4d95-b2fc-4a398a9ca87a"
       ],
       "settings": {
         "section_castling": "left"
