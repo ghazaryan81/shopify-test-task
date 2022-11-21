@@ -6,7 +6,6 @@
         "section_image": {
           "type": "section_image",
           "settings": {
-            "section_image": "shopify:\/\/shop_images\/img-1x.jpg"
           }
         },
         "section_headline": {
@@ -36,13 +35,6 @@
             "section_person_position_txt": "The Founders of Handmade Studio"
           }
         },
-        "element_person1": {
-          "type": "element_person",
-          "settings": {
-            "element_person_img": "shopify:\/\/shop_images\/1.jpg",
-            "element_person_title": "Clara Williams"
-          }
-        },
         "element_person2": {
           "type": "element_person",
           "settings": {
@@ -50,11 +42,25 @@
             "element_person_title": "Joyce Harper"
           }
         },
+        "element_person1": {
+          "type": "element_person",
+          "settings": {
+            "element_person_img": "shopify:\/\/shop_images\/1.jpg",
+            "element_person_title": "Clara Williams"
+          }
+        },
         "element_person3": {
           "type": "element_person",
           "settings": {
             "element_person_img": "shopify:\/\/shop_images\/3.jpg",
             "element_person_title": "Tanya Caldwell"
+          }
+        },
+        "1c2f26e8-0f2f-4d95-b2fc-4a398a9ca87a": {
+          "type": "element_person",
+          "settings": {
+            "element_person_img": "shopify:\/\/shop_images\/3.jpg",
+            "element_person_title": ""
           }
         }
       },
@@ -64,9 +70,10 @@
         "section_caption",
         "section_description",
         "section_person_position",
-        "element_person1",
         "element_person2",
-        "element_person3"
+        "element_person1",
+        "element_person3",
+        "1c2f26e8-0f2f-4d95-b2fc-4a398a9ca87a"
       ],
       "settings": {
         "section_castling": "left"
@@ -75,18 +82,18 @@
     "image_banner": {
       "type": "image-banner",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
-          }
-        },
         "text": {
           "type": "text",
           "settings": {
             "text": "Give customers details about the banner image(s) or content on the template.",
             "text_style": "body"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h0"
           }
         },
         "button": {
@@ -102,8 +109,8 @@
         }
       },
       "block_order": [
-        "heading",
         "text",
+        "heading",
         "button"
       ],
       "settings": {
