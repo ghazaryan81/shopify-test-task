@@ -9,7 +9,7 @@
       <div class="about-container__img-cell">
         <div class="about-container__img-position">
           {%- comment -%} IMAGE  {%- endcomment -%}
-          {% if section.settings.section_image.src != blank %}
+          {% if section.settings.section_image.src != null %}
             <div
               class="img-container"
               {{ section.shopify_attributes }}
@@ -22,7 +22,7 @@
                 loading="lazy"
               >
             </div>
-          {% elsif section.settings.section_image.src == blank %}
+          {% elsif section.settings.section_image.src == null %}
             <div
               class="img-container"
               {{ section.shopify_attributes }}
