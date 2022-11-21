@@ -167,6 +167,22 @@
 .person-full-name {
   display: inline-block;
   padding-left: var(--person-full-name--padding-right);
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-right: 4px;
+}
+.person-full-name:last-child:after {
+  display: none !important;
+}
+.person-full-name:after {
+  font-family: inherit;
+  content: ",";
+  display: inline;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: inherit;
 }
 
 .left-shift {
