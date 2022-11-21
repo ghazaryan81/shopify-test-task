@@ -37,13 +37,13 @@
         </div>
       </div>
 
+      {%- comment -%} HEADLINE  {%- endcomment -%}
       {%- if section.settings.section_headline_txt != blank -%}
         {%- style -%}
           {{ section.settings.section_headline_font_family | font_face }}
         {%- endstyle -%}
         <h2
           class="section-headline"
-          {{ section.settings.shopify_attributes }}
           style="
             font-family: '{{ section.settings.section_headline_font_family.family }}', {{ section.settings.section_headline_font_family.fallback_families }};
             font-weight: '{{ section.settings.section_headline_font_family.weight }}'
@@ -52,23 +52,27 @@
           {{- section.settings.section_headline_txt -}}
         </h2>
       {%- endif -%}
+      {%- comment -%} /HEADLINE  {%- endcomment -%}
+
+      {%- comment -%} CAPTION  {%- endcomment -%}
+      {%- if section.settings.section_caption_txt != blank -%}
+        {%- style -%}
+          {{ section.settings.section_caption_font_family | font_face }}
+        {%- endstyle -%}
+        <div
+          class="section-context section-context--caption"
+          style="
+            font-family: '{{ section.settings.section_caption_font_family.family }}', {{ section.settings.section_caption_font_family.fallback_families }};
+            font-weight: '{{ section.settings.section_caption_font_family.weight }}'
+          "
+        >
+          {{- section.settings.section_caption_txt -}}
+        </div>
+      {%- endif -%}
+      {%- comment -%} /CAPTION  {%- endcomment -%}
 
       {%- for block in section.blocks -%}
         {%- case block.type -%}
-          {%- when 'section_caption' -%}
-            {%- style -%}
-              {{ block.settings.section_caption_font_family | font_face }}
-            {%- endstyle -%}
-            <div
-              class="section-context section-context--caption"
-              {{ block.shopify_attributes }}
-              style="
-                font-family: '{{ block.settings.section_caption_font_family.family }}', {{ block.settings.section_caption_font_family.fallback_families }};
-                font-weight: '{{ block.settings.section_caption_font_family.weight }}'
-              "
-            >
-              {{- block.settings.section_caption_txt -}}
-            </div>
           {%- when 'section_description' -%}
             {%- style -%}
               {{ block.settings.section_description_font_family | font_face }}
@@ -169,6 +173,20 @@
         "label": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.label",
         "info": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.info",
         "default": "playfair_display_n4"
+      },
+      {
+        "id": "section_caption_txt",
+        "type": "richtext",
+        "label": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_txt.label",
+        "info": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_txt.info",
+        "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
+      },
+      {
+        "id": "section_caption_font_family",
+        "type": "font_picker",
+        "label": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.label",
+        "info": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.info",
+        "default": "poppins_n4"
       }
     ],
     "blocks": [
@@ -182,26 +200,6 @@
             "id": "section_image",
             "label": "t:sections.section_kazaryan.blocks.section_image.settings.section_image.label",
             "info": "t:sections.section_kazaryan.blocks.section_image.settings.section_image.info"
-          }
-        ]
-      },
-      {
-        "type": "section_caption",
-        "name": "t:sections.section_kazaryan.blocks.section_caption.name",
-        "settings": [
-          {
-            "id": "section_caption_txt",
-            "type": "richtext",
-            "label": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_txt.label",
-            "info": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_txt.info",
-            "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
-          },
-          {
-            "id": "section_caption_font_family",
-            "type": "font_picker",
-            "label": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.label",
-            "info": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.info",
-            "default": "poppins_n4"
           }
         ]
       },
