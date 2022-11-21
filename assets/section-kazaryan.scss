@@ -21,7 +21,7 @@
 .section-kazaryan {
  display: block;
  background: var(--section-kazaryan--background);
-
+ min-height: 1030px;
  // .section-kazaryan--font-family
  &--font-family {
   font-family: "Poppins", sans-serif;
