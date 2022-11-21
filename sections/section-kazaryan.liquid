@@ -14,7 +14,12 @@
               class="img-container"
               {{ section.shopify_attributes }}
             >
+              {%- assign image_size_2x = block.settings.element_person_img | times: 2 | at_most: 680 -%}
               <img
+                srcset="
+                  {{ block.settings.section_image | image_url: width: 306 }},
+                  {{ block.settings.section_image | image_url: width: image_size_2x }} 2x
+                "
                 src="{{ section.settings.section_image | image_url: width: 306, height: 376 }}"
                 alt="{{ section.settings.section_image.alt }}"
                 width="306"
