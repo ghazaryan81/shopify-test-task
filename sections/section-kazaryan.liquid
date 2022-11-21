@@ -37,22 +37,24 @@
         </div>
       </div>
 
+      {%- if section.settings.section_headline_txt != blank -%}
+        {%- style -%}
+          {{ section.settings.section_headline_font_family | font_face }}
+        {%- endstyle -%}
+        <h2
+          class="section-headline"
+          {{ section.settings.shopify_attributes }}
+          style="
+            font-family: '{{ section.settings.section_headline_font_family.family }}', {{ section.settings.section_headline_font_family.fallback_families }};
+            font-weight: '{{ section.settings.section_headline_font_family.weight }}'
+          "
+        >
+          {{- section.settings.section_headline_txt -}}
+        </h2>
+      {%- endif -%}
+
       {%- for block in section.blocks -%}
         {%- case block.type -%}
-          {%- when 'section_headline' -%}
-            {%- style -%}
-              {{ block.settings.section_headline_font_family | font_face }}
-            {%- endstyle -%}
-            <h2
-              class="section-headline"
-              {{ block.shopify_attributes }}
-              style="
-                font-family: '{{ block.settings.section_headline_font_family.family }}', {{ block.settings.section_headline_font_family.fallback_families }};
-                font-weight: '{{ block.settings.section_headline_font_family.weight }}'
-              "
-            >
-              {{- block.settings.section_headline_txt -}}
-            </h2>
           {%- when 'section_caption' -%}
             {%- style -%}
               {{ block.settings.section_caption_font_family | font_face }}
@@ -153,6 +155,20 @@
           }
         ],
         "default": "left"
+      },
+      {
+        "id": "section_headline_txt",
+        "type": "richtext",
+        "label": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_txt.label",
+        "info": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_txt.info",
+        "default": "<p>Hi, we are<br>Handmade Studio</p>"
+      },
+      {
+        "id": "section_headline_font_family",
+        "type": "font_picker",
+        "label": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.label",
+        "info": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.info",
+        "default": "playfair_display_n4"
       }
     ],
     "blocks": [
@@ -166,26 +182,6 @@
             "id": "section_image",
             "label": "t:sections.section_kazaryan.blocks.section_image.settings.section_image.label",
             "info": "t:sections.section_kazaryan.blocks.section_image.settings.section_image.info"
-          }
-        ]
-      },
-      {
-        "type": "section_headline",
-        "name": "t:sections.section_kazaryan.blocks.section_headline.name",
-        "settings": [
-          {
-            "id": "section_headline_txt",
-            "type": "richtext",
-            "label": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_txt.label",
-            "info": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_txt.info",
-            "default": "<p>Hi, we are<br>Handmade Studio</p>"
-          },
-          {
-            "id": "section_headline_font_family",
-            "type": "font_picker",
-            "label": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.label",
-            "info": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.info",
-            "default": "playfair_display_n4"
           }
         ]
       },
