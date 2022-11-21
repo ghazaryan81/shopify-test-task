@@ -94,65 +94,6 @@
         {%- endcase -%}
       {%- endfor -%}
 
-      {%- comment -%}
-         {% if section.blocks[5].type == 'element_person' %}
-          <div style="border:solid black 1px; min-height:50px" {{ section.blocks[5].shopify_attributes }}>
-            {{ section.blocks[5].settings.element_person_title }}
-          </div>
-        {% endif %}
-      {%- endcomment -%}
-
-      {%- comment -%}
-         <div style="border:solid #ff0000 1px; min-height:50px">
-          {% if section.blocks[0].type == 'section_person_position' %}
-            <div style="border:solid aqua 1px; min-height:50px" {{ blocks[0].shopify_attributes }}>
-              {{ block.settings.section_person_position_txt }}
-            </div>
-          {% endif %}
-        </div>
-      {%- endcomment -%}
-
-      {%- comment -%}
-         {%- for block in section.blocks -%}
-          {%- case block.type -%}
-            {%- when 'section_person_position' -%}
-              <div class="person-positions" {{ block.shopify_attributes }}>
-                {{ block.settings.section_person_position_txt }},
-              </div>
-          {%- endcase -%}
-        {%- endfor -%}
-      {%- endcomment -%}
-
-      {%- comment -%}
-         {%- for block in section.blocks -%}
-          {%- case block.type -%}
-            {%- when 'section_person_position' -%}
-              <div class="person-positions" {{ block.shopify_attributes }}>
-                {{ block.settings.section_person_position_txt }},
-              </div>
-          {%- endcase -%}
-        {%- endfor -%}
-      {%- endcomment -%}
-
-      {%- comment -%}
-         <div style="border:solid #ff0000 1px; min-height:50px">
-          {{ section.blocks[1].settings.id }}
-        </div>
-      {%- endcomment -%}
-
-      {%- comment -%}
-         {% if section.blocks[1].type == 'element_person' %}
-          <div style="border:solid #ff0000 1px; min-height:50px">KUKU</div>
-        {% endif %}
-      {%- endcomment -%}
-      {%- comment -%}
-         {% if section.blocks.element_person != blank %}
-          <div style="border:solid #ff0000 1px; min-height:50px" {{ block.shopify_attributes }}>
-            {{ block.settings.element_person_title }}
-          </div>
-        {% endif %}
-      {%- endcomment -%}
-
       <div class="list-persons">
         <div class="list-persons__images">
           {%- for block in section.blocks -%}
