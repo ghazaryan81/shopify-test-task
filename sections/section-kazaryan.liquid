@@ -89,7 +89,7 @@
       <div class="list-persons">
         <div class="list-persons__images">
           <span class="person-img" {{ block.shopify_attributes }}>
-            {% if block.settings.element_person_img != blank %}
+            {% if block.settings.element_person_img != null %}
               <img
                 src="{{ block.settings.element_person_img | image_url: width: 43, height: 43 }}"
                 alt="{{ block.settings.element_person_img.alt }}"
@@ -97,7 +97,7 @@
                 height="43"
                 loading="lazy"
               >
-            {% elsif block.settings.element_person_img != blank %}
+            {% elsif block.settings.element_person_img == null %}
               {{ 'collection-1' | placeholder_svg_tag }}
             {% endif %}
           </span>
