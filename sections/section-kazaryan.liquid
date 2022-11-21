@@ -8,32 +8,29 @@
       ">
       <div class="about-container__img-cell">
         <div class="about-container__img-position">
-          {%- for block in section.blocks -%}
-            {%- case block.type -%}
-              {%- when 'section_image' -%}
-                {% if block.settings.section_image.src != blank %}
-                  <div
-                    class="img-container"
-                    {{ block.shopify_attributes }}
-                  >
-                    <img
-                      src="{{ block.settings.section_image | image_url: width: 306, height: 376 }}"
-                      alt="{{ block.settings.section_image.alt }}"
-                      width="306"
-                      height="376"
-                      loading="lazy"
-                    >
-                  </div>
-                {% elsif block.settings.section_image.src == blank %}
-                  <div
-                    class="img-container"
-                    {{ block.shopify_attributes }}
-                  >
-                    {{ 'collection-1' | placeholder_svg_tag }}
-                  </div>
-                {% endif %}
-            {%- endcase -%}
-          {%- endfor -%}
+          {%- comment -%} IMAGE  {%- endcomment -%}
+          {% if section.settings.section_image.src != blank %}
+            <div
+              class="img-container"
+              {{ section.shopify_attributes }}
+            >
+              <img
+                src="{{ section.settings.section_image | image_url: width: 306, height: 376 }}"
+                alt="{{ section.settings.section_image.alt }}"
+                width="306"
+                height="376"
+                loading="lazy"
+              >
+            </div>
+          {% elsif section.settings.section_image.src == blank %}
+            <div
+              class="img-container"
+              {{ section.shopify_attributes }}
+            >
+              {{ 'collection-1' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+          {%- comment -%} /IMAGE  {%- endcomment -%}
         </div>
       </div>
 
@@ -91,24 +88,19 @@
 
       <div class="list-persons">
         <div class="list-persons__images">
-          {%- for block in section.blocks -%}
-            {%- case block.type -%}
-              {%- when 'element_person' -%}
-                <span class="person-img" {{ block.shopify_attributes }}>
-                  {% if block.settings.element_person_img.src != blank %}
-                    <img
-                      src="{{ block.settings.element_person_img | image_url: width: 43, height: 43 }}"
-                      alt="{{ block.settings.element_person_img.alt }}"
-                      width="43"
-                      height="43"
-                      loading="lazy"
-                    >
-                  {% elsif block.settings.element_person_img.src != blank %}
-                    {{ 'collection-1' | placeholder_svg_tag }}
-                  {% endif %}
-                </span>
-            {%- endcase -%}
-          {%- endfor -%}
+          <span class="person-img" {{ block.shopify_attributes }}>
+            {% if block.settings.element_person_img.src != blank %}
+              <img
+                src="{{ block.settings.element_person_img | image_url: width: 43, height: 43 }}"
+                alt="{{ block.settings.element_person_img.alt }}"
+                width="43"
+                height="43"
+                loading="lazy"
+              >
+            {% elsif block.settings.element_person_img.src != blank %}
+              {{ 'collection-1' | placeholder_svg_tag }}
+            {% endif %}
+          </span>
         </div>
 
         <div class="list-persons__full-names">
@@ -156,6 +148,12 @@
           }
         ],
         "default": "left"
+      },
+      {
+        "type": "image_picker",
+        "id": "section_image",
+        "label": "t:sections.section_kazaryan.blocks.section_image.settings.section_image.label",
+        "info": "t:sections.section_kazaryan.blocks.section_image.settings.section_image.info"
       },
       {
         "id": "section_headline_txt",
@@ -208,19 +206,6 @@
       }
     ],
     "blocks": [
-      {
-        "type": "section_image",
-        "name": "t:sections.section_kazaryan.blocks.section_image.name",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "section_image",
-            "label": "t:sections.section_kazaryan.blocks.section_image.settings.section_image.label",
-            "info": "t:sections.section_kazaryan.blocks.section_image.settings.section_image.info"
-          }
-        ]
-      },
       {
         "type": "element_person",
         "name": "t:sections.section_kazaryan.blocks.element_person.name",
