@@ -71,25 +71,23 @@
       {%- endif -%}
       {%- comment -%} /CAPTION  {%- endcomment -%}
 
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-          {%- when 'section_description' -%}
-            {%- style -%}
-              {{ block.settings.section_description_font_family | font_face }}
-            {%- endstyle -%}
-            <i class="horizontal-divider">&nbsp;</i>
-            <div
-              class="section-context section-context--two-cols"
-              {{ block.shopify_attributes }}
-              style="
-                font-family: '{{ block.settings.section_description_font_family.family }}', {{ block.settings.section_description_font_family.fallback_families }};
-                font-weight: '{{ block.settings.section_description_font_family.weight }}'
-              "
-            >
-              {{- block.settings.section_description_txt -}}
-            </div>
-        {%- endcase -%}
-      {%- endfor -%}
+      {%- comment -%} DESCRIPTION  {%- endcomment -%}
+      {%- if section.settings.section_description_txt != blank -%}
+        {%- style -%}
+          {{ section.settings.section_description_font_family | font_face }}
+        {%- endstyle -%}
+        <i class="horizontal-divider">&nbsp;</i>
+        <div
+          class="section-context section-context--two-cols"
+          style="
+            font-family: '{{ section.settings.section_description_font_family.family }}', {{ section.settings.section_description_font_family.fallback_families }};
+            font-weight: '{{ section.settings.section_description_font_family.weight }}'
+          "
+        >
+          {{- section.settings.section_description_txt -}}
+        </div>
+      {%- endif -%}
+      {%- comment -%} /DESCRIPTION  {%- endcomment -%}
 
       <div class="list-persons">
         <div class="list-persons__images">
@@ -125,14 +123,13 @@
             {%- endfor -%}
           </div>
 
-          {%- for block in section.blocks -%}
-            {%- case block.type -%}
-              {%- when 'section_person_position' -%}
-                <div class="person-positions" {{ block.shopify_attributes }}>
-                  {{ block.settings.section_person_position_txt }}
-                </div>
-            {%- endcase -%}
-          {%- endfor -%}
+          {%- comment -%} PERSON POSITION  {%- endcomment -%}
+          {%- if section.settings.section_person_position_txt != blank -%}
+            <div class="person-positions">
+              {{ section.settings.section_person_position_txt }}
+            </div>
+          {%- endif -%}
+          {%- comment -%} /PERSON POSITION  {%- endcomment -%}
         </div>
       </div>
     </div>
@@ -187,6 +184,27 @@
         "label": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.label",
         "info": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.info",
         "default": "poppins_n4"
+      },
+      {
+        "id": "section_description_txt",
+        "type": "richtext",
+        "label": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_txt.label",
+        "info": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_txt.info",
+        "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor. Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
+      },
+      {
+        "id": "section_description_font_family",
+        "type": "font_picker",
+        "label": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_font_family.label",
+        "info": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_font_family.info",
+        "default": "poppins_n4"
+      },
+      {
+        "id": "section_person_position_txt",
+        "type": "text",
+        "label": "t:sections.section_kazaryan.blocks.section_person_position.settings.section_person_position.label",
+        "info": "t:sections.section_kazaryan.blocks.section_person_position.settings.section_person_position.info",
+        "default": "The Founders of Handmade Studio"
       }
     ],
     "blocks": [
@@ -200,39 +218,6 @@
             "id": "section_image",
             "label": "t:sections.section_kazaryan.blocks.section_image.settings.section_image.label",
             "info": "t:sections.section_kazaryan.blocks.section_image.settings.section_image.info"
-          }
-        ]
-      },
-      {
-        "type": "section_description",
-        "name": "t:sections.section_kazaryan.blocks.section_description.name",
-        "settings": [
-          {
-            "id": "section_description_txt",
-            "type": "richtext",
-            "label": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_txt.label",
-            "info": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_txt.info",
-            "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor. Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
-          },
-          {
-            "id": "section_description_font_family",
-            "type": "font_picker",
-            "label": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_font_family.label",
-            "info": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_font_family.info",
-            "default": "poppins_n4"
-          }
-        ]
-      },
-      {
-        "type": "section_person_position",
-        "name": "t:sections.section_kazaryan.blocks.section_person_position.name",
-        "settings": [
-          {
-            "id": "section_person_position_txt",
-            "type": "text",
-            "label": "t:sections.section_kazaryan.blocks.section_person_position.settings.section_person_position.label",
-            "info": "t:sections.section_kazaryan.blocks.section_person_position.settings.section_person_position.info",
-            "default": "The Founders of Handmade Studio"
           }
         ]
       },
