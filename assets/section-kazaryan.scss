@@ -111,6 +111,7 @@
  line-height: var(--section-headline--line-height);
  letter-spacing: var(--section-headline--letter-spacing);
  padding-left: var(--section-headline--padding-left);
+ padding-bottom: var(--section-context--caption--padding-top);
 
  // &--font-family-playfair {
  //  font-family: "Playfair Display", serif;
@@ -125,11 +126,11 @@
  line-height: var(--section-context--line-height);
  letter-spacing: var(--section-context--letter-spacing);
  word-spacing: var(--section-context--word-spacing);
+ padding-bottom: var(--list-persons--padding-top);
 
  // .section-context--caption
  &--caption {
   text-decoration: none;
-  padding-top: var(--section-context--caption--padding-top);
   padding-right: var(--section-context--caption--padding-right);
   padding-bottom: var(--section-context--caption--padding-bottom);
   padding-left: var(--section-context--caption--padding-left);
@@ -159,7 +160,6 @@
 // .list-persons
 .list-persons {
  display: flex;
- padding-top: var(--list-persons--padding-top);
 
  // .list-persons__images
  &__images {
