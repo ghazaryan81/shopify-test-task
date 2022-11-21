@@ -2,10 +2,32 @@
  "sections": {
   "section_kazaryan": {
    "type": "section-kazaryan",
-
+   "blocks": {
+    "element_person1": {
+     "type": "element_person",
+     "settings": {
+      "element_person_img": "shopify://shop_images/1.jpg",
+      "element_person_title": "Clara Williams"
+     }
+    },
+    "element_person2": {
+     "type": "element_person",
+     "settings": {
+      "element_person_img": "shopify://shop_images/2.jpg",
+      "element_person_title": "Joyce Harper"
+     }
+    },
+    "element_person3": {
+     "type": "element_person",
+     "settings": {
+      "element_person_img": "shopify://shop_images/3.jpg",
+      "element_person_title": "Tanya Caldwell"
+     }
+    }
+   },
+   "block_order": ["element_person1", "element_person2", "element_person3"],
    "settings": {
-    "section_castling": "left",
-    "section_person_position_txt": "The Founders of Handmade Studio"
+    "section_castling": "left"
    }
   },
   "image_banner": {
