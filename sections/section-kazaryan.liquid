@@ -3,7 +3,7 @@
 <div class="section-kazaryan">
   <div class="section-kazaryan__fix">
     {%- comment -%}  {%- endcomment -%}
-    <div class="cells cells--about">
+    <div class="cells cells--about {% if section.settings.section_castling == "left" %}{% elsif section.settings.section_castling == "right"  %}cells--castling{% endif %}">
       <div class="cells__about-1 cells__about-1--right-space">
         {% if section.settings.section_image != null %}
           {%- assign image_size_2x = block.settings.element_person_img | times: 2 | at_most: 680 -%}
