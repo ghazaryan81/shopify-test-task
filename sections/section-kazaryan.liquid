@@ -1,248 +1,235 @@
 {{ 'section-kazaryan.css' | asset_url | stylesheet_tag }}
 
-<div class="section-kazaryan section-kazaryan----font-family">
+<div class="section-kazaryan">
   <div class="section-kazaryan__fix">
-    <div class="
-        about-container
-        about-container--{% if section.settings.section_castling == "left" %}left-spacer{% elsif section.settings.section_castling == "right"  %}right-spacer{% endif %}
-      ">
-      <div class="about-container__img-cell">
-        <div class="about-container__img-position">
-          {%- comment -%} IMAGE  {%- endcomment -%}
-          {% if section.settings.section_image.src != null %}
-            <div
-              class="img-container"
-              {{ section.shopify_attributes }}
-            >
-              {%- assign image_size_2x = block.settings.element_person_img | times: 2 | at_most: 680 -%}
-              <img
-                srcset="
-                  {{ block.settings.section_image | image_url: width: 306 }},
-                  {{ block.settings.section_image | image_url: width: image_size_2x }} 2x
-                "
-                src="{{ section.settings.section_image | image_url: width: 306, height: 376 }}"
-                alt="{{ section.settings.section_image.alt }}"
-                width="306"
-                height="376"
-                loading="lazy"
-              >
-            </div>
-          {% elsif section.settings.section_image.src == null %}
-            <div
-              class="img-container"
-              {{ section.shopify_attributes }}
-            >
-              {{ 'collection-1' | placeholder_svg_tag }}
-            </div>
-          {% endif %}
-          {%- comment -%} /IMAGE  {%- endcomment -%}
-        </div>
+    {%- comment -%}  {%- endcomment -%}
+    <div class="cells cells--about">
+      <div class="cells__about-1">
+        {% if section.settings.section_image != null %}
+          {%- assign image_size_2x = block.settings.element_person_img | times: 2 | at_most: 680 -%}
+          <img
+            srcset="
+              {{ block.settings.section_image | image_url: width: 306 }},
+              {{ block.settings.section_image | image_url: width: image_size_2x }} 2x
+            "
+            src="{{ section.settings.section_image | image_url: width: 306, height: 376 }}"
+            alt="{{ section.settings.section_image.alt }}"
+            width="306"
+            height="376"
+            loading="lazy"
+            class="section-img"
+          >
+        {% elsif section.settings.section_image == null %}
+          {{ 'collection-1' | placeholder_svg_tag }}
+        {% endif %}
       </div>
+      <div class="cells__about-2">
+        {%- comment -%} HEADLINE  {%- endcomment -%}
+        {%- if section.settings.section_headline_txt != blank -%}
+          {%- style -%}
+            {{ section.settings.section_headline_font_family | font_face }}
+          {%- endstyle -%}
+          <h2
+            class="section-headline"
+            style="
+              font-family: '{{ section.settings.section_headline_font_family.family }}', {{ section.settings.section_headline_font_family.fallback_families }};
+              font-weight: '{{ section.settings.section_headline_font_family.weight }}'
+            "
+          >
+            {{- section.settings.section_headline_txt -}}
+          </h2>
+        {%- endif -%}
+        {%- comment -%} /HEADLINE  {%- endcomment -%}
 
-      {%- comment -%} HEADLINE  {%- endcomment -%}
-      {%- if section.settings.section_headline_txt != blank -%}
-        {%- style -%}
-          {{ section.settings.section_headline_font_family | font_face }}
-        {%- endstyle -%}
-        <h2
-          class="section-headline"
-          style="
-            font-family: '{{ section.settings.section_headline_font_family.family }}', {{ section.settings.section_headline_font_family.fallback_families }};
-            font-weight: '{{ section.settings.section_headline_font_family.weight }}'
-          "
-        >
-          {{- section.settings.section_headline_txt -}}
-        </h2>
-      {%- endif -%}
-      {%- comment -%} /HEADLINE  {%- endcomment -%}
+        {%- comment -%} CAPTION  {%- endcomment -%}
+        {%- if section.settings.section_caption_txt != blank -%}
+          {%- style -%}
+            {{ section.settings.section_caption_font_family | font_face }}
+          {%- endstyle -%}
+          <div
+            class="section-context section-context--caption"
+            style="
+              font-family: '{{ section.settings.section_caption_font_family.family }}', {{ section.settings.section_caption_font_family.fallback_families }};
+              font-weight: '{{ section.settings.section_caption_font_family.weight }}'
+            "
+          >
+            {{- section.settings.section_caption_txt -}}
+          </div>
+        {%- endif -%}
+        {%- comment -%} /CAPTION  {%- endcomment -%}
 
-      {%- comment -%} CAPTION  {%- endcomment -%}
-      {%- if section.settings.section_caption_txt != blank -%}
-        {%- style -%}
-          {{ section.settings.section_caption_font_family | font_face }}
-        {%- endstyle -%}
-        <div
-          class="section-context section-context--caption"
-          style="
-            font-family: '{{ section.settings.section_caption_font_family.family }}', {{ section.settings.section_caption_font_family.fallback_families }};
-            font-weight: '{{ section.settings.section_caption_font_family.weight }}'
-          "
-        >
-          {{- section.settings.section_caption_txt -}}
-        </div>
-      {%- endif -%}
-      {%- comment -%} /CAPTION  {%- endcomment -%}
+        {%- comment -%} DESCRIPTION  {%- endcomment -%}
+        {%- if section.settings.section_description_txt != blank -%}
+          {%- style -%}
+            {{ section.settings.section_description_font_family | font_face }}
+          {%- endstyle -%}
+          <i class="horizontal-divider">&nbsp;</i>
+          <div
+            class="section-context section-context--two-cols"
+            style="
+              font-family: '{{ section.settings.section_description_font_family.family }}', {{ section.settings.section_description_font_family.fallback_families }};
+              font-weight: '{{ section.settings.section_description_font_family.weight }}'
+            "
+          >
+            {{- section.settings.section_description_txt -}}
+          </div>
+        {%- endif -%}
+        {%- comment -%} /DESCRIPTION  {%- endcomment -%}
 
-      {%- comment -%} DESCRIPTION  {%- endcomment -%}
-      {%- if section.settings.section_description_txt != blank -%}
-        {%- style -%}
-          {{ section.settings.section_description_font_family | font_face }}
-        {%- endstyle -%}
-        <i class="horizontal-divider">&nbsp;</i>
-        <div
-          class="section-context section-context--two-cols"
-          style="
-            font-family: '{{ section.settings.section_description_font_family.family }}', {{ section.settings.section_description_font_family.fallback_families }};
-            font-weight: '{{ section.settings.section_description_font_family.weight }}'
-          "
-        >
-          {{- section.settings.section_description_txt -}}
-        </div>
-      {%- endif -%}
-      {%- comment -%} /DESCRIPTION  {%- endcomment -%}
-
-      <div class="list-persons">
-        <div class="list-persons__images">
-          {%- for block in section.blocks -%}
-            {%- case block.type -%}
-              {%- when 'element_person' -%}
-                <span class="person-img" {{ block.shopify_attributes }}>
-                  {% if block.settings.element_person_img != null %}
-                    {%- assign image_size_2x = block.settings.element_person_img | times: 2 | at_most: 680 -%}
-                    <img
-                      srcset="
-                        {{ block.settings.element_person_img | image_url: width: 43 }},
-                        {{ block.settings.element_person_img | image_url: width: image_size_2x }} 2x
-                      "
-                      src="{{ block.settings.element_person_img | image_url: width: 43, height: 43 }}"
-                      alt="{{ block.settings.element_person_img.alt }}"
-                      width="43"
-                      height="43"
-                      loading="lazy"
-                    >
-                  {% elsif block.settings.element_person_img == null %}
-                    {{ 'collection-1' | placeholder_svg_tag }}
-                  {% endif %}
-                </span>
-            {% endcase %}
-          {% endfor %}
-        </div>
-
-        <div class="list-persons__full-names">
-          <div class="flex-box left-shift">
+        <div class="list-persons">
+          <div class="list-persons__images">
             {%- for block in section.blocks -%}
               {%- case block.type -%}
                 {%- when 'element_person' -%}
-                  {% if block.settings.element_person_title != blank %}
-                    <div class="person-full-name" {{ block.shopify_attributes }}>
-                      {{ block.settings.element_person_title }}
-                    </div>
-                  {% endif %}
-              {%- endcase -%}
-            {%- endfor -%}
+                  <span class="person-img" {{ block.shopify_attributes }}>
+                    {% if block.settings.element_person_img != null %}
+                      {%- assign image_size_2x = block.settings.element_person_img | times: 2 | at_most: 680 -%}
+                      <img
+                        srcset="
+                          {{ block.settings.element_person_img | image_url: width: 43 }},
+                          {{ block.settings.element_person_img | image_url: width: image_size_2x }} 2x
+                        "
+                        src="{{ block.settings.element_person_img | image_url: width: 43, height: 43 }}"
+                        alt="{{ block.settings.element_person_img.alt }}"
+                        width="43"
+                        height="43"
+                        loading="lazy"
+                      >
+                    {% elsif block.settings.element_person_img == null %}
+                      {{ 'collection-1' | placeholder_svg_tag }}
+                    {% endif %}
+                  </span>
+              {% endcase %}
+            {% endfor %}
           </div>
 
-          {%- comment -%} PERSON POSITION  {%- endcomment -%}
-          {%- if section.settings.section_person_position_txt != blank -%}
-            <div class="person-positions">
-              {{ section.settings.section_person_position_txt }}
+          <div class="list-persons__full-names">
+            <div class="flex-box flex-wrap left-shift">
+              {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                  {%- when 'element_person' -%}
+                    {% if block.settings.element_person_title != blank %}
+                      <div class="person-full-name" {{ block.shopify_attributes }}>
+                        {{ block.settings.element_person_title }}
+                      </div>
+                    {% endif %}
+                {%- endcase -%}
+              {%- endfor -%}
             </div>
-          {%- endif -%}
-          {%- comment -%} /PERSON POSITION  {%- endcomment -%}
+
+            {%- comment -%} PERSON POSITION  {%- endcomment -%}
+            {%- if section.settings.section_person_position_txt != blank -%}
+              <div class="person-positions">
+                {{ section.settings.section_person_position_txt }}
+              </div>
+            {%- endif -%}
+            {%- comment -%} /PERSON POSITION  {%- endcomment -%}
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+      {%- comment -%}  {%- endcomment -%}
 
-  {% schema %}
-  {
-    "name": "t:sections.section_kazaryan.name",
-    "tag": "section",
-    "settings": [
+      {% schema %}
       {
-        "id": "section_castling",
-        "type": "select",
-        "label": "t:sections.section_kazaryan.settings.section_castling.label",
-        "info": "t:sections.section_kazaryan.settings.section_castling.info",
-        "options": [
-          {
-            "value": "left",
-            "label": "t:sections.section_kazaryan.settings.section_castling.options_1"
-          },
-          {
-            "value": "right",
-            "label": "t:sections.section_kazaryan.settings.section_castling.options_2"
-          }
-        ],
-        "default": "left"
-      },
-      {
-        "type": "image_picker",
-        "id": "section_image",
-        "label": "t:sections.section_kazaryan.blocks.section_image.settings.section_image.label",
-        "info": "t:sections.section_kazaryan.blocks.section_image.settings.section_image.info"
-      },
-      {
-        "id": "section_headline_txt",
-        "type": "richtext",
-        "label": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_txt.label",
-        "info": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_txt.info",
-        "default": "<p>Hi, we are<br>Handmade Studio</p>"
-      },
-      {
-        "id": "section_headline_font_family",
-        "type": "font_picker",
-        "label": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.label",
-        "info": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.info",
-        "default": "playfair_display_n4"
-      },
-      {
-        "id": "section_caption_txt",
-        "type": "richtext",
-        "label": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_txt.label",
-        "info": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_txt.info",
-        "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
-      },
-      {
-        "id": "section_caption_font_family",
-        "type": "font_picker",
-        "label": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.label",
-        "info": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.info",
-        "default": "poppins_n4"
-      },
-      {
-        "id": "section_description_txt",
-        "type": "richtext",
-        "label": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_txt.label",
-        "info": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_txt.info",
-        "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor. Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
-      },
-      {
-        "id": "section_description_font_family",
-        "type": "font_picker",
-        "label": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_font_family.label",
-        "info": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_font_family.info",
-        "default": "poppins_n4"
-      },
-      {
-        "id": "section_person_position_txt",
-        "type": "text",
-        "label": "t:sections.section_kazaryan.blocks.section_person_position.settings.section_person_position.label",
-        "info": "t:sections.section_kazaryan.blocks.section_person_position.settings.section_person_position.info",
-        "default": "The Founders of Handmade Studio"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "element_person",
-        "name": "t:sections.section_kazaryan.blocks.element_person.name",
+        "name": "t:sections.section_kazaryan.name",
+        "tag": "section",
         "settings": [
           {
-            "type": "image_picker",
-            "id": "element_person_img",
-            "label": "t:sections.section_kazaryan.blocks.element_person.settings.img.label",
-            "info": "t:sections.section_kazaryan.blocks.element_person.settings.img.label"
+            "id": "section_castling",
+            "type": "select",
+            "label": "t:sections.section_kazaryan.settings.section_castling.label",
+            "info": "t:sections.section_kazaryan.settings.section_castling.info",
+            "options": [
+              {
+                "value": "left",
+                "label": "t:sections.section_kazaryan.settings.section_castling.options_1"
+              },
+              {
+                "value": "right",
+                "label": "t:sections.section_kazaryan.settings.section_castling.options_2"
+              }
+            ],
+            "default": "left"
           },
           {
+            "type": "image_picker",
+            "id": "section_image",
+            "label": "t:sections.section_kazaryan.blocks.section_image.settings.section_image.label",
+            "info": "t:sections.section_kazaryan.blocks.section_image.settings.section_image.info"
+          },
+          {
+            "id": "section_headline_txt",
+            "type": "richtext",
+            "label": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_txt.label",
+            "info": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_txt.info",
+            "default": "<p>Hi, we are<br>Handmade Studio</p>"
+          },
+          {
+            "id": "section_headline_font_family",
+            "type": "font_picker",
+            "label": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.label",
+            "info": "t:sections.section_kazaryan.blocks.section_headline.settings.section_headline_font_family.info",
+            "default": "playfair_display_n4"
+          },
+          {
+            "id": "section_caption_txt",
+            "type": "richtext",
+            "label": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_txt.label",
+            "info": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_txt.info",
+            "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
+          },
+          {
+            "id": "section_caption_font_family",
+            "type": "font_picker",
+            "label": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.label",
+            "info": "t:sections.section_kazaryan.blocks.section_caption.settings.section_caption_font_family.info",
+            "default": "poppins_n4"
+          },
+          {
+            "id": "section_description_txt",
+            "type": "richtext",
+            "label": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_txt.label",
+            "info": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_txt.info",
+            "default": "<p>Marketing non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor. Non-disclosure agreement scrum project alpha lean startup startup business plan user experience angel investor focus research & development value proposition graphical user interface investor.</p>"
+          },
+          {
+            "id": "section_description_font_family",
+            "type": "font_picker",
+            "label": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_font_family.label",
+            "info": "t:sections.section_kazaryan.blocks.section_description.settings.section_description_font_family.info",
+            "default": "poppins_n4"
+          },
+          {
+            "id": "section_person_position_txt",
             "type": "text",
-            "id": "element_person_title",
-            "label": "t:sections.section_kazaryan.blocks.element_person.settings.text.label",
-            "info": "t:sections.section_kazaryan.blocks.element_person.settings.text.label",
-            "default": "Clara Williams"
+            "label": "t:sections.section_kazaryan.blocks.section_person_position.settings.section_person_position.label",
+            "info": "t:sections.section_kazaryan.blocks.section_person_position.settings.section_person_position.info",
+            "default": "The Founders of Handmade Studio"
+          }
+        ],
+        "blocks": [
+          {
+            "type": "element_person",
+            "name": "t:sections.section_kazaryan.blocks.element_person.name",
+            "settings": [
+              {
+                "type": "image_picker",
+                "id": "element_person_img",
+                "label": "t:sections.section_kazaryan.blocks.element_person.settings.img.label",
+                "info": "t:sections.section_kazaryan.blocks.element_person.settings.img.label"
+              },
+              {
+                "type": "text",
+                "id": "element_person_title",
+                "label": "t:sections.section_kazaryan.blocks.element_person.settings.text.label",
+                "info": "t:sections.section_kazaryan.blocks.element_person.settings.text.label",
+                "default": "Clara Williams"
+              }
+            ]
           }
         ]
       }
-    ]
-  }
-  {% endschema %}
+      {% endschema %}
+    </div>
+  </div>
 </div>

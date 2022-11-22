@@ -17,6 +17,10 @@
  display: flex;
 }
 
+.flex-wrap {
+ flex-wrap: wrap;
+}
+
 // .section-kazaryan
 .section-kazaryan {
  display: block;
@@ -228,4 +232,37 @@
 .person-positions {
  color: var(--person-positions--color);
  font-size: 14px;
+}
+
+// .cells
+.cells {
+ display: flex;
+ padding-left: 15px;
+ padding-right: 15px;
+ margin: 0 auto;
+
+ // .cells--about
+ &--about {
+  max-width: 1106px;
+  min-height: 588px;
+ }
+
+ // .cells__about-1
+ &__about-1 {
+  width: 40.89219%;
+  min-height: 588px;
+ }
+ // .cells__about-2
+ &__about-2 {
+  width: 59.1078%;
+  min-height: 588px;
+ }
+}
+
+// .section-img
+.section-img {
+ display: block;
+ max-width: 306px;
+ width: 100%;
+ height: auto;
 }
