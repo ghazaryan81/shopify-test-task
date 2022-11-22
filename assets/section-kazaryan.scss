@@ -25,12 +25,8 @@
 .section-kazaryan {
  display: block;
  background: var(--section-kazaryan--background);
- min-height: 1030px;
- // .section-kazaryan--font-family
- &--font-family {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
- }
+ padding-top: 14.3229166%;
+ padding-bottom: 14.3229166%;
 
  // .section-kazaryan__fix
  &__fix {
@@ -159,6 +155,8 @@
  border-bottom: solid var(--horizontal-divider--border-bottom) 1px;
  font-size: 0;
  background: none;
+ margin-right: var(--section-context--two-cols--padding-right);
+ margin-left: var(--section-context--two-cols--padding-left);
 }
 
 // .list-persons
@@ -236,6 +234,7 @@
 
 // .cells
 .cells {
+ $this: &;
  display: flex;
  padding-left: 15px;
  padding-right: 15px;
@@ -250,12 +249,48 @@
  // .cells__about-1
  &__about-1 {
   width: 40.89219%;
-  min-height: 588px;
+  // min-height: 588px;
+
+  // .cells__about-1--right-spacer
+  &--right-space {
+   padding-right: 40px;
+  }
  }
  // .cells__about-2
  &__about-2 {
   width: 59.1078%;
   min-height: 588px;
+ }
+
+ @media screen and (max-width: 750px) {
+  flex-direction: column;
+
+  // .cells--about
+  &--about {
+   max-width: 580px;
+  }
+
+  // .cells__about-1
+  &__about-1 {
+   text-decoration: none;
+   // background-color: aqua;
+   width: 100%;
+
+   // .cells__about-1--right-space
+   &--right-space {
+    padding-right: 0;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+   }
+  }
+
+  // .cells__about-2
+  &__about-2 {
+   text-decoration: none;
+   // background-color: green;
+   width: 100%;
+  }
  }
 }
 
